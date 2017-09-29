@@ -1,0 +1,6 @@
+framework module Pods_IOSBaseMVVMCUITests {
+  umbrella header "Pods-IOSBaseMVVMCUITests-umbrella.h"
+
+  export *
+  module * { export * }
+}

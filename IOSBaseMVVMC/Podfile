@@ -1,0 +1,25 @@
+# Uncomment the next line to define a global platform for your project
+# platform :ios, '9.0'
+
+target 'IOSBaseMVVMC' do
+  # Comment the next line if you're not using Swift and don't want to use dynamic frameworks
+  use_frameworks!
+
+  # Pods for IOSBaseMVVMC
+
+  target 'IOSBaseMVVMCTests' do
+    inherit! :search_paths
+    # Pods for testing
+  end
+
+  target 'IOSBaseMVVMCUITests' do
+    inherit! :search_paths
+    # Pods for testing
+  end
+
+  pod 'SlideMenuControllerSwift'
+  pod 'Alamofire'
+  pod 'RxSwift'
+  pod 'RxCocoa'
+
+end
