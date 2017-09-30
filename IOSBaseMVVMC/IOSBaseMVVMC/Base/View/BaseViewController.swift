@@ -13,18 +13,16 @@ class BaseViewController<T>: UIViewController {
 
     let disposeBag = DisposeBag()
     
-    private(set) var viewModel: T
+    var viewModel: T?
     
     init(viewModel: T) {
         self.viewModel = viewModel
-        
         super.init(nibName: nil, bundle: nil)
-        
         configure(viewModel: viewModel)
     }
     
     required init?(coder aDecoder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
+        super.init(coder: aDecoder)
     }
     
     func configure(viewModel: T) {}

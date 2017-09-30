@@ -253,8 +253,8 @@ extension DelegateProxyType {
                     
                 return Disposables.create { [weak object] in
                     subscription.dispose()
-                    object?.layoutIfNeeded()
                     unregisterDelegate.dispose()
+                    object?.layoutIfNeeded()
                 }
             }
         }

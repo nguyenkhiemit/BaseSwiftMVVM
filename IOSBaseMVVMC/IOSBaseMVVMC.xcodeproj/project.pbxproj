@@ -133,7 +133,6 @@
 		1812DE9E1F7E3F93004F9286 = {
 			isa = PBXGroup;
 			children = (
-				1883C64A1F7F37E00015367F /* Localizable.strings */,
 				1812DEA91F7E3F93004F9286 /* IOSBaseMVVMC */,
 				1812DEBE1F7E3F94004F9286 /* IOSBaseMVVMCTests */,
 				1812DEC91F7E3F94004F9286 /* IOSBaseMVVMCUITests */,
@@ -163,6 +162,7 @@
 				1812DEAA1F7E3F93004F9286 /* AppDelegate.swift */,
 				1812DEB11F7E3F93004F9286 /* Assets.xcassets */,
 				1812DEB31F7E3F93004F9286 /* LaunchScreen.storyboard */,
+				1883C64A1F7F37E00015367F /* Localizable.strings */,
 				1812DEB61F7E3F93004F9286 /* Info.plist */,
 				1803EB201F7E932A00A99D8B /* .gitignore */,
 			);
