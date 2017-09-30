@@ -1,0 +1,17 @@
+/* 
+  Localizable.strings
+  IOSBaseMVVMC
+
+  Created by Nguyen on 9/30/17.
+  Copyright © 2017 Apple. All rights reserved.
+*/
+
+"Home" = "TRANG CHỦ";
+
+"Title Login" = "Đăng nhập";
+
+"Login" = "ĐĂNG NHẬP";
+
+"Title About Me" = "Về tôi";
+
+"About Me" = "VÊ TÔI";

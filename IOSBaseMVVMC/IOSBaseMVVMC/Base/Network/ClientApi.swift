@@ -23,7 +23,7 @@ extension ClientApi: TargetType {
     
     /// The target's base `URL`.
     var baseURL: URL {
-        return URL(string: "https://test-services.vntrip.vn/vntrip/")!
+        return URL(string: BASE_URL)!
     }
     
     /// The path to be appended to `baseURL` to form the full `URL`.

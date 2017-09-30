@@ -34,6 +34,9 @@
                             <constraint firstItem="xob-Db-drC" firstAttribute="leading" secondItem="awq-j0-TKS" secondAttribute="leading" id="YGM-XO-sJ1"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="tableView" destination="xob-Db-drC" id="cwB-9D-SYM"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ekC-ZR-3yw" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
