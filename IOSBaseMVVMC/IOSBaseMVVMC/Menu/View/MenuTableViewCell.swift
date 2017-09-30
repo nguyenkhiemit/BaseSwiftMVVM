@@ -1,29 +1,30 @@
 //
-//  MenuCell.swift
+//  MenuTableViewCell.swift
 //  IOSBaseMVVMC
 //
-//  Created by Nguyen on 9/30/17.
+//  Created by Nguyen on 10/1/17.
 //  Copyright © 2017 Apple. All rights reserved.
 //
 
 import UIKit
 
-class MenuViewCell: UITableViewCell {
-    
-    static var Identifier = "MenuViewCell"
+class MenuTableViewCell: UITableViewCell {
 
-    @IBOutlet weak var menuViewLabel: UILabel!
+    static var Identifier = "MenuTableViewCell"
+    
+    @IBOutlet weak var menuTableViewLabel: UILabel!
+    
     
     override func awakeFromNib() {
         super.awakeFromNib()
     }
-
+    
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
     }
     
     func setData(menu: Menu) {
-        menuViewLabel.text = menu.text
+        menuTableViewLabel.text = menu.text
     }
 
 }

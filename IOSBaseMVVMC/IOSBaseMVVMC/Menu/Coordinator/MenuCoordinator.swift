@@ -11,8 +11,7 @@ import UIKit
 final class MenuCoordinator: BaseCoordinator {
     
     override func start() {
-        let viewModel = MenuViewModel()
-        let viewController = MenuViewController(viewModel: viewModel)
+        let viewController = MenuViewController()
         let navigation = UINavigationController(rootViewController: viewController)
         navigationController?.pushViewController(navigation, animated: true)
     }

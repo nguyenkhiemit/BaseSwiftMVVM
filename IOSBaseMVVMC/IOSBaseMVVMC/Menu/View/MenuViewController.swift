@@ -10,13 +10,18 @@ import UIKit
 import RxSwift
 import RxCocoa
 
-class MenuViewController: BaseViewController<MenuViewModel> {
+class MenuViewController: UIViewController {
     
-    @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var menuTableView: UITableView!
+    
+    let disposeBag = DisposeBag()
+    
+    lazy var viewModel: MenuViewModel = {
+       return MenuViewModel()
+    }()
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.viewModel = MenuViewModel()
         configureTableView()
         initData()
     }
@@ -27,18 +32,22 @@ class MenuViewController: BaseViewController<MenuViewModel> {
     
     private func configureTableView() {
         registerCell()
-        tableView.rowHeight = 30
+        menuTableView.rowHeight = 50
     }
     
     private func registerCell() {
-        let nib = UINib(nibName: String(describing:MenuViewCell.Identifier), bundle: nil)
-        tableView.register(nib, forCellReuseIdentifier: String(describing:MenuViewCell.Identifier))
+        let nib = UINib(nibName: String(describing: MenuTableViewCell.self), bundle: nil)
+        menuTableView.register(nib, forCellReuseIdentifier: String(describing: MenuTableViewCell.self))
     }
     
     func initData() {
-        viewModel?.arrayMenu.drive(tableView.rx.items(cellIdentifier:  String(describing: MenuViewCell.Identifier), cellType: MenuViewCell.self)) {
+//        viewModel.arrayMenu.drive(menuTableView.rx.items(cellIdentifier:  String(describing: MenuViewCell.self), cellType: MenuViewCell.self)) {
+//            row, menu, cell in
+//            print("===> 2")
+//            cell.setData(menu: menu)
+//        }.disposed(by: disposeBag)
+        viewModel.arrayMenu.asObservable().bindTo(menuTableView.rx.items(cellIdentifier: MenuTableViewCell.Identifier, cellType: MenuTableViewCell.self)) {
             row, menu, cell in
-            print("menu = \(menu)")
             cell.setData(menu: menu)
         }.disposed(by: disposeBag)
     }
