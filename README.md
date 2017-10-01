@@ -3,6 +3,7 @@
 1)  Use RxSwift bind data to a UITableView : 
 
 _ If tableview have only a item type, you use:
+
       lazy var arrayMenu: Variable<[Menu]> = {
         return self.createData()
       }()
