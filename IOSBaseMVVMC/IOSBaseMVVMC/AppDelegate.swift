@@ -27,6 +27,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         let homeStoryBoard: UIStoryboard = UIStoryboard(name: "Home", bundle: nil)
         let homeController = homeStoryBoard.instantiateViewController(withIdentifier: "HomeViewController")
+
+//        let menuController = UINavigationController(rootViewController: MenuViewController())
+//        
+//        let homeController = UINavigationController(rootViewController: HomeViewController())
         
         let slideMenuController = SlideMenuController(mainViewController: homeController, leftMenuViewController: menuController)
         

@@ -14,7 +14,6 @@ class MenuTableViewCell: UITableViewCell {
     
     @IBOutlet weak var menuTableViewLabel: UILabel!
     
-    
     override func awakeFromNib() {
         super.awakeFromNib()
     }
