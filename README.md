@@ -1,4 +1,4 @@
-# IOS-BaseSwiftMVVM-C1
+# IOS-BaseSwiftMVVM-C
 
 1)  Use RxSwift bind data to a UITableView : 
 
