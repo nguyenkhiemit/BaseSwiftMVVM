@@ -14,11 +14,11 @@ _ If tableview have only a item type, you use:
             
 _ If tableview have multiple type, you use:
   
-    lazy var arrayMenu: Variable<[Menu]> = {
+      lazy var arrayMenu: Variable<[Menu]> = {
         return self.createData()
       }()
-    
-    viewModel.arrayMenu.asObservable().bindTo(menuTableView.rx.items) {
+
+      viewModel.arrayMenu.asObservable().bindTo(menuTableView.rx.items) {
             (tableView, row, element) in
             let indexPath = IndexPath(row: row, section: 0)
             // get type item from element
@@ -26,4 +26,4 @@ _ If tableview have multiple type, you use:
             cell.setData(menu: element)
             return cell
         }.disposed(by: disposeBag)
-    }
+      }
