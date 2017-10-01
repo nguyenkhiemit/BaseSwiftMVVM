@@ -12,6 +12,8 @@
 		180BC04B1F7FC813008E4A62 /* Menu.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 180BC04A1F7FC813008E4A62 /* Menu.storyboard */; };
 		180BC0551F8063A1008E4A62 /* MenuTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 180BC0541F8063A1008E4A62 /* MenuTableViewCell.swift */; };
 		180BC0571F806409008E4A62 /* MenuTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 180BC0561F806409008E4A62 /* MenuTableViewCell.xib */; };
+		180BC0591F807682008E4A62 /* TitleMenuTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 180BC0581F807682008E4A62 /* TitleMenuTableViewCell.xib */; };
+		180BC05D1F80861E008E4A62 /* TitleMenuTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 180BC05C1F80861E008E4A62 /* TitleMenuTableViewCell.swift */; };
 		1812DEAB1F7E3F93004F9286 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1812DEAA1F7E3F93004F9286 /* AppDelegate.swift */; };
 		1812DEB21F7E3F93004F9286 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1812DEB11F7E3F93004F9286 /* Assets.xcassets */; };
 		1812DEB51F7E3F93004F9286 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1812DEB31F7E3F93004F9286 /* LaunchScreen.storyboard */; };
@@ -61,6 +63,8 @@
 		180BC04A1F7FC813008E4A62 /* Menu.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Menu.storyboard; sourceTree = "<group>"; };
 		180BC0541F8063A1008E4A62 /* MenuTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuTableViewCell.swift; sourceTree = "<group>"; };
 		180BC0561F806409008E4A62 /* MenuTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MenuTableViewCell.xib; sourceTree = "<group>"; };
+		180BC0581F807682008E4A62 /* TitleMenuTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TitleMenuTableViewCell.xib; sourceTree = "<group>"; };
+		180BC05C1F80861E008E4A62 /* TitleMenuTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TitleMenuTableViewCell.swift; sourceTree = "<group>"; };
 		1812DEA71F7E3F93004F9286 /* IOSBaseMVVMC.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = IOSBaseMVVMC.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1812DEAA1F7E3F93004F9286 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		1812DEB11F7E3F93004F9286 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -333,6 +337,7 @@
 			children = (
 				180BC04A1F7FC813008E4A62 /* Menu.storyboard */,
 				180BC0561F806409008E4A62 /* MenuTableViewCell.xib */,
+				180BC0581F807682008E4A62 /* TitleMenuTableViewCell.xib */,
 			);
 			path = Storyboard;
 			sourceTree = "<group>";
@@ -342,6 +347,7 @@
 			children = (
 				1883C6401F7F36520015367F /* MenuViewController.swift */,
 				180BC0541F8063A1008E4A62 /* MenuTableViewCell.swift */,
+				180BC05C1F80861E008E4A62 /* TitleMenuTableViewCell.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -508,6 +514,7 @@
 				1883C64C1F7F37E00015367F /* Localizable.strings in Resources */,
 				1883C6361F7F36480015367F /* Home.storyboard in Resources */,
 				1812DEB21F7E3F93004F9286 /* Assets.xcassets in Resources */,
+				180BC0591F807682008E4A62 /* TitleMenuTableViewCell.xib in Resources */,
 				180BC0571F806409008E4A62 /* MenuTableViewCell.xib in Resources */,
 				1883C62D1F7F36380015367F /* Authentication.storyboard in Resources */,
 			);
@@ -681,6 +688,7 @@
 				1812DEEC1F7E4FDC004F9286 /* BaseCoordinator.swift in Sources */,
 				1883C6441F7F36520015367F /* Menu.swift in Sources */,
 				1883C6371F7F36480015367F /* HomeViewController.swift in Sources */,
+				180BC05D1F80861E008E4A62 /* TitleMenuTableViewCell.swift in Sources */,
 				1883C6461F7F36520015367F /* MenuViewController.swift in Sources */,
 				1812DEF71F7E591A004F9286 /* Utils.swift in Sources */,
 				1883C6431F7F36520015367F /* MenuCoordinator.swift in Sources */,

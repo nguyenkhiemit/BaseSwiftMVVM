@@ -31,24 +31,29 @@ class MenuViewController: UIViewController {
     }
     
     private func configureTableView() {
-        registerCell()
-        menuTableView.rowHeight = 50
-    }
-    
-    private func registerCell() {
-        let nib = UINib(nibName: String(describing: MenuTableViewCell.self), bundle: nil)
-        menuTableView.register(nib, forCellReuseIdentifier: String(describing: MenuTableViewCell.self))
+        let nib = UINib(nibName: MenuTableViewCell.Identifier, bundle: nil)
+        menuTableView.register(nib, forCellReuseIdentifier: MenuTableViewCell.Identifier)
+        
+        let titleNib = UINib(nibName: TitleMenuTableViewCell.Identifier, bundle: nil)
+        menuTableView.register(titleNib, forCellReuseIdentifier: TitleMenuTableViewCell.Identifier)
     }
     
     func initData() {
-//        viewModel.arrayMenu.drive(menuTableView.rx.items(cellIdentifier:  String(describing: MenuViewCell.self), cellType: MenuViewCell.self)) {
-//            row, menu, cell in
-//            print("===> 2")
-//            cell.setData(menu: menu)
-//        }.disposed(by: disposeBag)
-        viewModel.arrayMenu.asObservable().bindTo(menuTableView.rx.items(cellIdentifier: MenuTableViewCell.Identifier, cellType: MenuTableViewCell.self)) {
-            row, menu, cell in
-            cell.setData(menu: menu)
+        viewModel.arrayMenu.asObservable().bindTo(menuTableView.rx.items) {
+                (tableView, row, element) in
+                let indexPath = IndexPath(row: row, section: 0)
+            
+            if(MenuType.TITLE == element.type) {
+                self.menuTableView.rowHeight = 30
+                let cell = self.menuTableView.dequeueReusableCell(withIdentifier: TitleMenuTableViewCell.Identifier, for: indexPath) as! TitleMenuTableViewCell
+                cell.setData(menu: element)
+                return cell
+            } else {
+                self.menuTableView.rowHeight = 44
+                let cell = self.menuTableView.dequeueReusableCell(withIdentifier: MenuTableViewCell.Identifier, for: indexPath) as! MenuTableViewCell
+                cell.setData(menu: element)
+                return cell
+            }
         }.disposed(by: disposeBag)
     }
     
