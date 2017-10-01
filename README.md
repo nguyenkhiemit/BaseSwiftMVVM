@@ -22,9 +22,16 @@ _ If tableview have multiple type, you use:
       viewModel.arrayMenu.asObservable().bindTo(menuTableView.rx.items) {
             (tableView, row, element) in
             let indexPath = IndexPath(row: row, section: 0)
-            // get type item from element
-            let cell = self.menuTableView.dequeueReusableCell(withIdentifier: MenuTableViewCell.Identifier, for: indexPath) as! MenuTableViewCell
-            cell.setData(menu: element)
-            return cell
+             if(MenuType.TITLE == element.type) {
+                self.menuTableView.rowHeight = 30
+                let cell = self.menuTableView.dequeueReusableCell(withIdentifier: TitleMenuTableViewCell.Identifier, for: indexPath) as! TitleMenuTableViewCell
+                cell.setData(menu: element)
+                return cell
+            } else {
+                self.menuTableView.rowHeight = 44
+                let cell = self.menuTableView.dequeueReusableCell(withIdentifier: MenuTableViewCell.Identifier, for: indexPath) as! MenuTableViewCell
+                cell.setData(menu: element)
+                return cell
+            }
         }.disposed(by: disposeBag)
       }
