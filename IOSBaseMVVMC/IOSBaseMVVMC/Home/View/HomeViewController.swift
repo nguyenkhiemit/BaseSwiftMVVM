@@ -16,6 +16,7 @@ class HomeViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         SwiftEventBus.onMainThread(self, name: "index") { (notification) in
+             print("Login Start !!! HomeViewController")
             self.viewModel?.openNewScreen(index: notification.object as! Int)
         }
     }

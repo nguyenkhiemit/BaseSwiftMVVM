@@ -9,7 +9,6 @@
 import Foundation
 import RxSwift
 import RxCocoa
-import SwiftEventBus
 
 class MenuViewModel {
     
@@ -52,10 +51,6 @@ extension MenuViewModel {
         menus.value.append(Menu(index: MenuIndex.POS_ABOUT_TITLE.rawValue, text: "Title About Me".localized(), type: MenuType.TITLE))
         menus.value.append(Menu(index: MenuIndex.POS_ABOUT.rawValue, text: "About Me".localized(), type: MenuType.MENU))
         return menus
-    }
-    
-    func openNewScreen(index: Int) {
-        SwiftEventBus.post("index", sender: (index as AnyObject))
     }
 
 }

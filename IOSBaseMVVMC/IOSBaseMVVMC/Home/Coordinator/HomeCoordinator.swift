@@ -27,6 +27,7 @@ final class HomeCoordinator: BaseCoordinator {
 
 extension HomeCoordinator: HomeCoordinatorDelegate {
     func openNewScreen(index: Int) {
+         print("Login Start !!! HomeCoordinator")
         let loginCoordinator = LoginCoordinator(navigationController: navigationController)
         loginCoordinator.start()
     }

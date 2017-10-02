@@ -17,6 +17,7 @@ class HomeViewModel {
     }
     
     func openNewScreen(index: Int) {
+        print("Login Start !!! HomeViewModel")
         delegate?.openNewScreen(index: index)
     }
 }

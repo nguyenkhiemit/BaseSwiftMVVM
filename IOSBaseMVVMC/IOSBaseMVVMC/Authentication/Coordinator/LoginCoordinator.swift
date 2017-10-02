@@ -13,6 +13,7 @@ import SlideMenuControllerSwift
 class LoginCoordinator: BaseCoordinator {
     
     override func start() {
+        print("Login Start !!!")
         let authenStoryboard: UIStoryboard = UIStoryboard(name: "Authentication", bundle: nil)
         let loginViewController = authenStoryboard.instantiateViewController(withIdentifier: LoginViewController.Identifier) as! LoginViewController
         self.navigationController?.pushViewController(loginViewController, animated: true)

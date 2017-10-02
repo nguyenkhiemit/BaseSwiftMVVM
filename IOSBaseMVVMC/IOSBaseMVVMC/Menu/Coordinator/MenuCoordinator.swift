@@ -9,10 +9,6 @@
 import Foundation
 import UIKit
 
-//protocol MenuCoordinatorType: class {
-//    func openLoginScreen()
-//}
-
 final class MenuCoordinator {
     
     func open() -> MenuViewController {

@@ -9,6 +9,7 @@
 import UIKit
 import RxSwift
 import RxCocoa
+import SwiftEventBus
 import SlideMenuControllerSwift
  
 class MenuViewController: UIViewController {
@@ -62,8 +63,9 @@ class MenuViewController: UIViewController {
         menuTableView.rx.itemSelected
             .subscribe(onNext: {
                 [weak self]indexPath in
+                print("Login Start !!! MenuViewController")
                 self?.slideMenuController()?.closeLeft()
-                self?.viewModel!.openNewScreen(index: indexPath.item)
+                SwiftEventBus.post("index", sender: (indexPath.item as AnyObject))
             }).addDisposableTo(disposeBag)
     }
     
