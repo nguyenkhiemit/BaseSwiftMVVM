@@ -9,25 +9,18 @@
 import Foundation
 import UIKit
 
-protocol MenuCoordinatorType: class {
-    func openLoginScreen()
-}
+//protocol MenuCoordinatorType: class {
+//    func openLoginScreen()
+//}
 
-final class MenuCoordinator: BaseCoordinator, MenuCoordinatorType {
+final class MenuCoordinator {
     
     func open() -> MenuViewController {
         let viewModel = MenuViewModel()
-        viewModel.navigationCoordinator = self
         let menuStoryBoard: UIStoryboard = UIStoryboard(name: "Menu", bundle: nil)
         let menuController = menuStoryBoard.instantiateViewController(withIdentifier: "MenuViewController") as! MenuViewController
-        navigationController = menuController.navigationController
         menuController.viewModel = viewModel
         return menuController
-    }
-    
-    func openLoginScreen() {
-        let loginCoordinator = LoginCoordinator(navigationController: navigationController)
-        loginCoordinator.start()
     }
     
 }

@@ -9,6 +9,7 @@
 import Foundation
 import RxSwift
 import RxCocoa
+import SwiftEventBus
 
 class MenuViewModel {
     
@@ -26,7 +27,7 @@ class MenuViewModel {
         return self.createData()
     }()
     
-    var navigationCoordinator: MenuCoordinatorType?
+//    var delegateCoordinator: MenuCoordinatorType?
     
     var newScreenSubject = PublishSubject<Menu>()
     
@@ -56,12 +57,13 @@ extension MenuViewModel {
     }
     
     func openNewScreen(index: Int) {
-        switch index {
-        case MenuIndex.POS_LOGIN.rawValue:
-            self.navigationCoordinator?.openLoginScreen()
-        default:
-            self.navigationCoordinator?.openLoginScreen()
-        }
+        SwiftEventBus.post("index", sender: (index as AnyObject))
+//        switch index {
+//        case MenuIndex.POS_LOGIN.rawValue:
+//            self.delegateCoordinator?.openLoginScreen()
+//        default:
+//            self.delegateCoordinator?.openLoginScreen()
+//        }
     }
 
 }

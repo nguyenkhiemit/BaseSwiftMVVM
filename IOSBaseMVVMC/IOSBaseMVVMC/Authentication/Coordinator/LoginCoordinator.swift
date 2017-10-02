@@ -15,7 +15,6 @@ class LoginCoordinator: BaseCoordinator {
         let authenStoryboard: UIStoryboard = UIStoryboard(name: "Authentication", bundle: nil)
         let loginViewController = authenStoryboard.instantiateViewController(withIdentifier: LoginViewController.Identifier) as! LoginViewController
         loginViewController.slideMenuController()?.closeLeft()
-        loginViewController.slideMenuController()?.changeMainViewController(loginViewController, close: true)
         let navigation = UINavigationController(rootViewController: loginViewController)
         self.navigationController?.pushViewController(navigation, animated: true)
     }

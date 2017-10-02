@@ -19,8 +19,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Override point for customization after application launch.
         window = UIWindow()
         
-        let navigationController = UINavigationController()
-        let appCoordinator = AppCoordinator(navigationController: navigationController)
+        let appCoordinator = AppCoordinator()
         let slideMenuController = appCoordinator.open()
         
         window?.rootViewController = slideMenuController

@@ -7,3 +7,10 @@
 //
 
 import Foundation
+
+class HomeViewModel {
+    
+    func openNewScreen(index: Int) {
+        
+    }
+}
