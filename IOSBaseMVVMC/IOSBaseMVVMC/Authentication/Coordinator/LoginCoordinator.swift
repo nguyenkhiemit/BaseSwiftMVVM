@@ -8,14 +8,13 @@
 
 import Foundation
 import UIKit
+import SlideMenuControllerSwift
 
 class LoginCoordinator: BaseCoordinator {
     
     override func start() {
         let authenStoryboard: UIStoryboard = UIStoryboard(name: "Authentication", bundle: nil)
         let loginViewController = authenStoryboard.instantiateViewController(withIdentifier: LoginViewController.Identifier) as! LoginViewController
-        loginViewController.slideMenuController()?.closeLeft()
-        let navigation = UINavigationController(rootViewController: loginViewController)
-        self.navigationController?.pushViewController(navigation, animated: true)
+        self.navigationController?.pushViewController(loginViewController, animated: true)
     }
 }

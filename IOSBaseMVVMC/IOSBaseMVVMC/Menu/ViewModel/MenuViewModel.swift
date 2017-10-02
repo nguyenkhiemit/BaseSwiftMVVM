@@ -27,21 +27,19 @@ class MenuViewModel {
         return self.createData()
     }()
     
-//    var delegateCoordinator: MenuCoordinatorType?
-    
-    var newScreenSubject = PublishSubject<Menu>()
+//    var newScreenSubject = PublishSubject<Menu>()
     
     var t: Int = 0
     
     init() {
-        newScreenSubject
-            .asObservable()
-            .subscribe(onNext: {
-                [unowned self] in
-                print("\($0)")
-                self.openNewScreen(index: $0.index!)
-            })
-            .disposed(by: disposeBag)
+//        newScreenSubject
+//            .asObservable()
+//            .subscribe(onNext: {
+//                [unowned self] in
+//                print("\($0)")
+//                self.openNewScreen(index: $0.index!)
+//            })
+//            .disposed(by: disposeBag)
     }
 }
 
@@ -58,12 +56,6 @@ extension MenuViewModel {
     
     func openNewScreen(index: Int) {
         SwiftEventBus.post("index", sender: (index as AnyObject))
-//        switch index {
-//        case MenuIndex.POS_LOGIN.rawValue:
-//            self.delegateCoordinator?.openLoginScreen()
-//        default:
-//            self.delegateCoordinator?.openLoginScreen()
-//        }
     }
 
 }

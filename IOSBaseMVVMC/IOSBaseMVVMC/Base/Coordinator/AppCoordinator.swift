@@ -22,8 +22,7 @@ final class AppCoordinator {
         
         let navigationController = UINavigationController()
         let homeCoordinator = HomeCoordinator(navigationController: navigationController)
-        let homeController = homeCoordinator.open()
-        navigationController.pushViewController(homeController, animated: false)
+        homeCoordinator.start()
         
         let slideMenuController = SlideMenuController(mainViewController: navigationController, leftMenuViewController: menuController)
         

@@ -10,7 +10,13 @@ import Foundation
 
 class HomeViewModel {
     
-    func openNewScreen(index: Int) {
+    var delegate: HomeCoordinatorDelegate?
+    
+    init() {
         
+    }
+    
+    func openNewScreen(index: Int) {
+        delegate?.openNewScreen(index: index)
     }
 }

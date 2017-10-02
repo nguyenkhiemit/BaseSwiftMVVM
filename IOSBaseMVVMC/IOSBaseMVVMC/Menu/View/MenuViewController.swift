@@ -55,9 +55,16 @@ class MenuViewController: UIViewController {
             }
         }.addDisposableTo(disposeBag)
         
-        menuTableView.rx.modelSelected(Menu.self)
-            .bindTo(viewModel!.newScreenSubject)
-            .addDisposableTo(disposeBag)
+//        menuTableView.rx.modelSelected(Menu.self)
+//            .bindTo(viewModel!.newScreenSubject)
+//            .addDisposableTo(disposeBag)
+        
+        menuTableView.rx.itemSelected
+            .subscribe(onNext: {
+                [weak self]indexPath in
+                self?.slideMenuController()?.closeLeft()
+                self?.viewModel!.openNewScreen(index: indexPath.item)
+            }).addDisposableTo(disposeBag)
     }
     
 }
