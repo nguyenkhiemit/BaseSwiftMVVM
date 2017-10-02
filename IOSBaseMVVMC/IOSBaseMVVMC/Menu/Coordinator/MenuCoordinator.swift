@@ -8,11 +8,26 @@
 
 import Foundation
 import UIKit
-final class MenuCoordinator: BaseCoordinator {
+
+protocol MenuCoordinatorType: class {
+    func openLoginScreen()
+}
+
+final class MenuCoordinator: BaseCoordinator, MenuCoordinatorType {
     
-    override func start() {
-        let viewController = MenuViewController()
-        let navigation = UINavigationController(rootViewController: viewController)
-        navigationController?.pushViewController(navigation, animated: true)
+    func open() -> MenuViewController {
+        let viewModel = MenuViewModel()
+        viewModel.navigationCoordinator = self
+        let menuStoryBoard: UIStoryboard = UIStoryboard(name: "Menu", bundle: nil)
+        let menuController = menuStoryBoard.instantiateViewController(withIdentifier: "MenuViewController") as! MenuViewController
+        navigationController = menuController.navigationController
+        menuController.viewModel = viewModel
+        return menuController
     }
+    
+    func openLoginScreen() {
+        let loginCoordinator = LoginCoordinator(navigationController: navigationController)
+        loginCoordinator.start()
+    }
+    
 }

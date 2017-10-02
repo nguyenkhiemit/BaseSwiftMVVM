@@ -18,21 +18,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
         window = UIWindow()
-        SlideMenuOptions.leftViewWidth = getWidthScreen() - 70
-        SlideMenuOptions.contentViewDrag = true
-        SlideMenuOptions.panGesturesEnabled = true
         
-        let menuStoryBoard: UIStoryboard = UIStoryboard(name: "Menu", bundle: nil)
-        let menuController = menuStoryBoard.instantiateViewController(withIdentifier: "MenuViewController")
-        
-        let homeStoryBoard: UIStoryboard = UIStoryboard(name: "Home", bundle: nil)
-        let homeController = homeStoryBoard.instantiateViewController(withIdentifier: "HomeViewController")
-
-//        let menuController = UINavigationController(rootViewController: MenuViewController())
-//        
-//        let homeController = UINavigationController(rootViewController: HomeViewController())
-        
-        let slideMenuController = SlideMenuController(mainViewController: homeController, leftMenuViewController: menuController)
+        let navigationController = UINavigationController()
+        let appCoordinator = AppCoordinator(navigationController: navigationController)
+        let slideMenuController = appCoordinator.open()
         
         window?.rootViewController = slideMenuController
         window?.makeKeyAndVisible()

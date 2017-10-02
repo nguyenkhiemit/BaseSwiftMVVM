@@ -13,7 +13,7 @@ class BaseCoordinator {
     
     var childCoordinators: [BaseCoordinator] = []
     
-    weak var navigationController: UINavigationController?
+    var navigationController: UINavigationController?
     
     init(navigationController: UINavigationController?) {
         self.navigationController = navigationController

@@ -9,17 +9,16 @@
 import UIKit
 import RxSwift
 import RxCocoa
-
+import SlideMenuControllerSwift
+ 
 class MenuViewController: UIViewController {
     
     @IBOutlet weak var menuTableView: UITableView!
     
     let disposeBag = DisposeBag()
-    
-    lazy var viewModel: MenuViewModel = {
-       return MenuViewModel()
-    }()
 
+    var viewModel: MenuViewModel? = nil
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         configureTableView()
@@ -39,7 +38,7 @@ class MenuViewController: UIViewController {
     }
     
     func initData() {
-        viewModel.arrayMenu.asObservable().bindTo(menuTableView.rx.items) {
+        viewModel!.arrayMenu.asObservable().bindTo(menuTableView.rx.items) {
                 (tableView, row, element) in
                 let indexPath = IndexPath(row: row, section: 0)
             
@@ -54,7 +53,11 @@ class MenuViewController: UIViewController {
                 cell.setData(menu: element)
                 return cell
             }
-        }.disposed(by: disposeBag)
+        }.addDisposableTo(disposeBag)
+        
+        menuTableView.rx.modelSelected(Menu.self)
+            .bindTo(viewModel!.newScreenSubject)
+            .addDisposableTo(disposeBag)
     }
     
 }

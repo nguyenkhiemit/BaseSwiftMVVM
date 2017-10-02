@@ -8,12 +8,23 @@
 
 import Foundation
 import UIKit
+import SlideMenuControllerSwift
 
 final class AppCoordinator: BaseCoordinator {
     
-    override func start() {
-        let coordinator = MenuCoordinator(navigationController: navigationController)
-        coordinator.start()
-        childCoordinators.append(coordinator)
+    func open() -> SlideMenuController {
+        SlideMenuOptions.leftViewWidth = getWidthScreen() - 70
+        //SlideMenuOptions.contentViewDrag = true
+        SlideMenuOptions.panGesturesEnabled = true
+    
+        let menuCoordinator = MenuCoordinator(navigationController: navigationController)
+        let menuController = menuCoordinator.open()
+        
+        let homeCoordinator = HomeCoordinator(navigationController: navigationController)
+        let homeController = homeCoordinator.open()
+        
+        let slideMenuController = SlideMenuController(mainViewController: homeController, leftMenuViewController: menuController)
+        
+        return slideMenuController
     }
 }

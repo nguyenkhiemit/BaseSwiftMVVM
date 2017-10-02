@@ -7,3 +7,15 @@
 //
 
 import Foundation
+import UIKit
+
+class RegisterCoordinator: BaseCoordinator {
+    
+    override func start() {
+        let authenStoryboard = UIStoryboard.init(name: "Authentication", bundle: nil)
+        let registerController = authenStoryboard.instantiateViewController(withIdentifier: RegisterViewController.Identifier) as! RegisterViewController
+        let navigation = UINavigationController(rootViewController: registerController)
+        navigationController?.pushViewController(navigation, animated: true)
+    }
+    
+}

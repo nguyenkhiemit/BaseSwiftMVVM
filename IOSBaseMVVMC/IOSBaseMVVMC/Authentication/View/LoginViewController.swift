@@ -9,6 +9,8 @@
 import UIKit
 
 class LoginViewController: UIViewController {
+    
+    static var Identifier = "LoginViewController"
 
     override func viewDidLoad() {
         super.viewDidLoad()

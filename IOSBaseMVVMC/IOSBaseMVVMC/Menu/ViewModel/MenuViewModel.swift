@@ -20,9 +20,28 @@ class MenuViewModel {
         case POS_ABOUT
     }
     
+    fileprivate let disposeBag = DisposeBag()
+    
     lazy var arrayMenu: Variable<[Menu]> = {
         return self.createData()
     }()
+    
+    var navigationCoordinator: MenuCoordinatorType?
+    
+    var newScreenSubject = PublishSubject<Menu>()
+    
+    var t: Int = 0
+    
+    init() {
+        newScreenSubject
+            .asObservable()
+            .subscribe(onNext: {
+                [unowned self] in
+                print("\($0)")
+                self.openNewScreen(index: $0.index!)
+            })
+            .disposed(by: disposeBag)
+    }
 }
 
 extension MenuViewModel {
@@ -34,6 +53,15 @@ extension MenuViewModel {
         menus.value.append(Menu(index: MenuIndex.POS_ABOUT_TITLE.rawValue, text: "Title About Me".localized(), type: MenuType.TITLE))
         menus.value.append(Menu(index: MenuIndex.POS_ABOUT.rawValue, text: "About Me".localized(), type: MenuType.MENU))
         return menus
+    }
+    
+    func openNewScreen(index: Int) {
+        switch index {
+        case MenuIndex.POS_LOGIN.rawValue:
+            self.navigationCoordinator?.openLoginScreen()
+        default:
+            self.navigationCoordinator?.openLoginScreen()
+        }
     }
 
 }
