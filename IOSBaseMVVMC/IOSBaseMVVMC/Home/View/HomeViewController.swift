@@ -15,8 +15,8 @@ class HomeViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        print("HomeViewController -- 1")
         SwiftEventBus.onMainThread(self, name: "index") { (notification) in
-             print("Login Start !!! HomeViewController")
             self.viewModel?.openNewScreen(index: notification.object as! Int)
         }
     }
@@ -25,9 +25,9 @@ class HomeViewController: UIViewController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-
-    override func viewWillDisappear(_ animated: Bool) {
-        super.viewWillDisappear(animated)
+    
+    override func viewDidDisappear(_ animated: Bool) {
+        print("HomeViewController -- 2")
         SwiftEventBus.unregister(self)
     }
 

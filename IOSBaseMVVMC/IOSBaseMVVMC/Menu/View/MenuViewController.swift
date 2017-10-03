@@ -63,7 +63,6 @@ class MenuViewController: UIViewController {
         menuTableView.rx.itemSelected
             .subscribe(onNext: {
                 [weak self]indexPath in
-                print("Login Start !!! MenuViewController")
                 self?.slideMenuController()?.closeLeft()
                 SwiftEventBus.post("index", sender: (indexPath.item as AnyObject))
             }).addDisposableTo(disposeBag)
