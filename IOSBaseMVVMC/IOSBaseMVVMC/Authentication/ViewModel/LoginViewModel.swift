@@ -12,6 +12,8 @@ class LoginViewModel {
     
     var delegate: LoginCoordinatorDelegate?
     
+    
+    
     init() {
         
     }

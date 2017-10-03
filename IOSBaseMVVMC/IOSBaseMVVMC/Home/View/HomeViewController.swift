@@ -7,14 +7,20 @@
 //
 
 import UIKit
+import RxSwift
+import RxCocoa
 import SwiftEventBus
+import SlideMenuControllerSwift
 
 class HomeViewController: UIViewController {
 
     var viewModel: HomeViewModel?
     
+    @IBOutlet weak var menuButton: UIImageView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        bindView()
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -22,14 +28,19 @@ class HomeViewController: UIViewController {
             self.viewModel?.openNewScreen(index: notification.object as! Int)
         }
     }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+    
+    func bindView() {
+        menuButton.isUserInteractionEnabled = true
+        let tapRecognizer = UITapGestureRecognizer(target: self, action: #selector(openMenu))
+        menuButton.addGestureRecognizer(tapRecognizer)
     }
     
     override func viewDidDisappear(_ animated: Bool) {
         SwiftEventBus.unregister(self)
+    }
+    
+    func openMenu() {
+        self.slideMenuController()?.openLeft()
     }
 
 }

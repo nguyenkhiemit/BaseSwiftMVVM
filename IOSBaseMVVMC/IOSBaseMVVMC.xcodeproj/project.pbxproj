@@ -34,6 +34,13 @@
 		1812DEEC1F7E4FDC004F9286 /* BaseCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1812DEEB1F7E4FDC004F9286 /* BaseCoordinator.swift */; };
 		1812DEEE1F7E5351004F9286 /* AppCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1812DEED1F7E5351004F9286 /* AppCoordinator.swift */; };
 		1812DEF71F7E591A004F9286 /* Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1812DEF61F7E591A004F9286 /* Utils.swift */; };
+		1840409A1F8386C4008D3227 /* AuthenticationRequestManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 184040991F8386C4008D3227 /* AuthenticationRequestManager.swift */; };
+		1840409C1F838725008D3227 /* LoginAPIService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1840409B1F838725008D3227 /* LoginAPIService.swift */; };
+		1840409E1F838779008D3227 /* RegisterAPIService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1840409D1F838779008D3227 /* RegisterAPIService.swift */; };
+		184040A01F838788008D3227 /* AccountAPIService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1840409F1F838788008D3227 /* AccountAPIService.swift */; };
+		184040A21F8389B2008D3227 /* LoginRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 184040A11F8389B1008D3227 /* LoginRequest.swift */; };
+		184040A41F8389D0008D3227 /* LoginResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 184040A31F8389D0008D3227 /* LoginResponse.swift */; };
+		184040A71F838B2C008D3227 /* Constant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 184040A61F838B2C008D3227 /* Constant.swift */; };
 		1883C62D1F7F36380015367F /* Authentication.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1883C62C1F7F36380015367F /* Authentication.storyboard */; };
 		1883C6361F7F36480015367F /* Home.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1883C6321F7F36480015367F /* Home.storyboard */; };
 		1883C6371F7F36480015367F /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1883C6341F7F36480015367F /* HomeViewController.swift */; };
@@ -99,6 +106,13 @@
 		1812DEEB1F7E4FDC004F9286 /* BaseCoordinator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseCoordinator.swift; sourceTree = "<group>"; };
 		1812DEED1F7E5351004F9286 /* AppCoordinator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppCoordinator.swift; sourceTree = "<group>"; };
 		1812DEF61F7E591A004F9286 /* Utils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Utils.swift; sourceTree = "<group>"; };
+		184040991F8386C4008D3227 /* AuthenticationRequestManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticationRequestManager.swift; sourceTree = "<group>"; };
+		1840409B1F838725008D3227 /* LoginAPIService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginAPIService.swift; sourceTree = "<group>"; };
+		1840409D1F838779008D3227 /* RegisterAPIService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterAPIService.swift; sourceTree = "<group>"; };
+		1840409F1F838788008D3227 /* AccountAPIService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountAPIService.swift; sourceTree = "<group>"; };
+		184040A11F8389B1008D3227 /* LoginRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginRequest.swift; sourceTree = "<group>"; };
+		184040A31F8389D0008D3227 /* LoginResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginResponse.swift; sourceTree = "<group>"; };
+		184040A61F838B2C008D3227 /* Constant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constant.swift; sourceTree = "<group>"; };
 		1883C6271F7F33360015367F /* vi */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = vi; path = vi.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
 		1883C62C1F7F36380015367F /* Authentication.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Authentication.storyboard; sourceTree = "<group>"; };
 		1883C6321F7F36480015367F /* Home.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Home.storyboard; sourceTree = "<group>"; };
@@ -162,6 +176,8 @@
 		180BC05F1F80946A008E4A62 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				184040A11F8389B1008D3227 /* LoginRequest.swift */,
+				184040A31F8389D0008D3227 /* LoginResponse.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -187,6 +203,10 @@
 		180BC0721F80979E008E4A62 /* Networking */ = {
 			isa = PBXGroup;
 			children = (
+				184040991F8386C4008D3227 /* AuthenticationRequestManager.swift */,
+				1840409B1F838725008D3227 /* LoginAPIService.swift */,
+				1840409D1F838779008D3227 /* RegisterAPIService.swift */,
+				1840409F1F838788008D3227 /* AccountAPIService.swift */,
 			);
 			name = Networking;
 			sourceTree = "<group>";
@@ -296,9 +316,18 @@
 			name = Extension;
 			sourceTree = "<group>";
 		};
+		184040A51F838B1C008D3227 /* Utility */ = {
+			isa = PBXGroup;
+			children = (
+				184040A61F838B2C008D3227 /* Constant.swift */,
+			);
+			path = Utility;
+			sourceTree = "<group>";
+		};
 		1883C62A1F7F36380015367F /* Authentication */ = {
 			isa = PBXGroup;
 			children = (
+				184040A51F838B1C008D3227 /* Utility */,
 				180BC0721F80979E008E4A62 /* Networking */,
 				180BC0611F809477008E4A62 /* ViewModel */,
 				180BC0601F809471008E4A62 /* View */,
@@ -746,24 +775,31 @@
 				180BC0631F8094D8008E4A62 /* LoginViewController.swift in Sources */,
 				1812DEDF1F7E4114004F9286 /* TargetType.swift in Sources */,
 				1812DEE21F7E414C004F9286 /* StringExtension.swift in Sources */,
+				184040A21F8389B2008D3227 /* LoginRequest.swift in Sources */,
 				1812DEAB1F7E3F93004F9286 /* AppDelegate.swift in Sources */,
+				1840409C1F838725008D3227 /* LoginAPIService.swift in Sources */,
 				180BC06B1F809582008E4A62 /* LoginCoordinator.swift in Sources */,
 				180BC0651F8094E4008E4A62 /* RegisterViewController.swift in Sources */,
 				1883C65B1F7F4F710015367F /* MenuViewModel.swift in Sources */,
 				180BC0711F80964F008E4A62 /* HomeCoordinator.swift in Sources */,
+				184040A01F838788008D3227 /* AccountAPIService.swift in Sources */,
 				1812DEEE1F7E5351004F9286 /* AppCoordinator.swift in Sources */,
 				180BC0551F8063A1008E4A62 /* MenuTableViewCell.swift in Sources */,
 				180BC0671F809550008E4A62 /* LoginViewModel.swift in Sources */,
 				1812DEEC1F7E4FDC004F9286 /* BaseCoordinator.swift in Sources */,
 				1883C6441F7F36520015367F /* Menu.swift in Sources */,
+				1840409A1F8386C4008D3227 /* AuthenticationRequestManager.swift in Sources */,
 				1883C6371F7F36480015367F /* HomeViewController.swift in Sources */,
 				180BC05D1F80861E008E4A62 /* TitleMenuTableViewCell.swift in Sources */,
+				184040A71F838B2C008D3227 /* Constant.swift in Sources */,
 				1883C6461F7F36520015367F /* MenuViewController.swift in Sources */,
 				1812DEF71F7E591A004F9286 /* Utils.swift in Sources */,
 				1883C6431F7F36520015367F /* MenuCoordinator.swift in Sources */,
 				180BC0691F80955C008E4A62 /* RegisterViewModel.swift in Sources */,
 				180BC06D1F80958E008E4A62 /* RegisterCoordinator.swift in Sources */,
 				180BC06F1F809642008E4A62 /* HomeViewModel.swift in Sources */,
+				1840409E1F838779008D3227 /* RegisterAPIService.swift in Sources */,
+				184040A41F8389D0008D3227 /* LoginResponse.swift in Sources */,
 				1812DEDD1F7E404E004F9286 /* Constant.swift in Sources */,
 				1812DEE41F7E416E004F9286 /* ClientApi.swift in Sources */,
 				1883C65E1F7F5B4D0015367F /* BaseViewController.swift in Sources */,
