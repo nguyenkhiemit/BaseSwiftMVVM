@@ -10,28 +10,28 @@ import UIKit
 
 class RegisterViewController: UIViewController {
     
-     static var Identifier = "RegisterViewControler"
+    var viewModel: RegisterViewModel?
+    
+    static var Identifier = "RegisterViewController"
+    
+    @IBOutlet weak var backButton: UIImageView!
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        bindView()
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+    func bindView() {
+        backButton.isUserInteractionEnabled = true
+        let tapRecognizer = UITapGestureRecognizer(target: self, action: #selector(back))
+        backButton.addGestureRecognizer(tapRecognizer)
     }
-    */
-
+    
+    func back() {
+        viewModel?.back()
+    }
 }

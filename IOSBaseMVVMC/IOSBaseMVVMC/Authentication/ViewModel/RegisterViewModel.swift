@@ -10,4 +10,14 @@ import Foundation
 
 class RegisterViewModel {
     
+    var delegate: RegisterCoordinatorDelegate?
+    
+    init() {
+        
+    }
+    
+    func back() {
+        delegate?.back()
+    }
+    
 }

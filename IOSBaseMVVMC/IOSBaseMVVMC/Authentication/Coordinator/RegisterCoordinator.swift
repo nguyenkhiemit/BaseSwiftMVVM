@@ -9,13 +9,24 @@
 import Foundation
 import UIKit
 
+protocol RegisterCoordinatorDelegate {
+    func back()
+}
+
 class RegisterCoordinator: BaseCoordinator {
     
     override func start() {
+        let viewModel = RegisterViewModel()
+        viewModel.delegate = self
         let authenStoryboard = UIStoryboard.init(name: "Authentication", bundle: nil)
         let registerController = authenStoryboard.instantiateViewController(withIdentifier: RegisterViewController.Identifier) as! RegisterViewController
-        let navigation = UINavigationController(rootViewController: registerController)
-        navigationController?.pushViewController(navigation, animated: true)
+        registerController.viewModel = viewModel
+        navigationController?.pushViewController(registerController, animated: true)
     }
-    
+}
+
+extension RegisterCoordinator: RegisterCoordinatorDelegate {
+    func back() {
+        self.navigationController?.popViewController(animated: true)
+    }
 }

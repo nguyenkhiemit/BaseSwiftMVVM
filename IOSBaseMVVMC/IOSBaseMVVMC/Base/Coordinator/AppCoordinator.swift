@@ -21,6 +21,7 @@ final class AppCoordinator {
         let menuController = menuCoordinator.open()
         
         let navigationController = UINavigationController()
+        navigationController.isNavigationBarHidden = true
         let homeCoordinator = HomeCoordinator(navigationController: navigationController)
         homeCoordinator.start()
         

@@ -15,7 +15,9 @@ class HomeViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        print("HomeViewController -- 1")
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
         SwiftEventBus.onMainThread(self, name: "index") { (notification) in
             self.viewModel?.openNewScreen(index: notification.object as! Int)
         }
@@ -27,7 +29,6 @@ class HomeViewController: UIViewController {
     }
     
     override func viewDidDisappear(_ animated: Bool) {
-        print("HomeViewController -- 2")
         SwiftEventBus.unregister(self)
     }
 

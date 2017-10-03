@@ -10,4 +10,17 @@ import Foundation
 
 class LoginViewModel {
     
+    var delegate: LoginCoordinatorDelegate?
+    
+    init() {
+        
+    }
+    
+    func openRegisterScreen() {
+        delegate?.openRegisterScreen()
+    }
+    
+    func back() {
+        delegate?.back()
+    }
 }
