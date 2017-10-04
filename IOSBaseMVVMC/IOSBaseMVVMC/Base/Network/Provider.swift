@@ -8,6 +8,7 @@
 
 import Foundation
 import RxAlamofire
+import Alamofire
 import RxSwift
 import RxCocoa
 
@@ -43,7 +44,13 @@ class Provider {
         }
         return parts.joined(separator: "&")
     }
+}
 
+extension Provider {
+    func requestNetwork(api: ClientApi, parameters: [String: Any]? = nil,
+                        headers: [String: String]? = nil, encoding: ParameterEncoding? = nil) {
+        
+    }
 }
 
 
