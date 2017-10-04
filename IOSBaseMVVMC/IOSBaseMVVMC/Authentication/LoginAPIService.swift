@@ -13,7 +13,7 @@ import RxAlamofire
 
 class LoginAPIService {
     
-    static func login(request: LoginRequest) -> Variable<LoginResponse> {
-        return requestJSON(<#T##method: HTTPMethod##HTTPMethod#>, <#T##url: URLConvertible##URLConvertible#>, parameters: <#T##[String : Any]?#>, encoding: <#T##ParameterEncoding#>, headers: <#T##[String : String]?#>)
-    }
+//    static func login(request: LoginRequest) -> Variable<LoginResponse> {
+//        return requestJSON(<#T##method: HTTPMethod##HTTPMethod#>, <#T##url: URLConvertible##URLConvertible#>, parameters: <#T##[String : Any]?#>, encoding: <#T##ParameterEncoding#>, headers: <#T##[String : String]?#>)
+//    }
 }
