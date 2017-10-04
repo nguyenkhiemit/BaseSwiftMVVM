@@ -56,16 +56,13 @@ class MenuViewController: UIViewController {
             }
         }.addDisposableTo(disposeBag)
         
-//        menuTableView.rx.modelSelected(Menu.self)
-//            .bindTo(viewModel!.newScreenSubject)
-//            .addDisposableTo(disposeBag)
-        
-        menuTableView.rx.itemSelected
+        menuTableView.rx.modelSelected(Menu.self)
             .subscribe(onNext: {
-                [weak self]indexPath in
-                self?.slideMenuController()?.closeLeft()
-                SwiftEventBus.post("index", sender: (indexPath.item as AnyObject))
-            }).addDisposableTo(disposeBag)
+                menu in
+                self.slideMenuController()?.closeLeft()
+                SwiftEventBus.post("index", sender: (menu.index as AnyObject))
+            })
+            .addDisposableTo(disposeBag)
     }
     
 }

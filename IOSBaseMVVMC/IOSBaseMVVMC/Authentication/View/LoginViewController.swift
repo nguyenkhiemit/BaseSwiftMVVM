@@ -37,7 +37,7 @@ class LoginViewController: UIViewController {
         registerButton.rx.tap
             .debounce(0.2, scheduler: MainScheduler.instance)
             .subscribe(onNext: {
-            [weak self] _ in
+                [weak self] _ in
                 self?.viewModel?.openRegisterScreen()
             })
             .disposed(by: disposeBag)
@@ -45,6 +45,14 @@ class LoginViewController: UIViewController {
         backButton.isUserInteractionEnabled = true
         let tapRecognizer = UITapGestureRecognizer(target: self, action: #selector(back))
         backButton.addGestureRecognizer(tapRecognizer)
+        
+        loginButton.rx.tap
+            .debounce(0.5, scheduler: MainScheduler.instance)
+            .subscribe(onNext: {
+                [weak self] _ in
+                
+            })
+            .disposed(by: disposeBag)
     }
     
     func back() {

@@ -12,14 +12,16 @@ class LoginViewModel {
     
     var delegate: LoginCoordinatorDelegate?
     
-    
-    
     init() {
         
     }
     
     func openRegisterScreen() {
         delegate?.openRegisterScreen()
+    }
+    
+    func login() {
+        
     }
     
     func back() {

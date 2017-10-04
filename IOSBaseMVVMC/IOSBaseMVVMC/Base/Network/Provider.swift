@@ -42,6 +42,12 @@ class Provider {
 }
 
 extension Provider {
+    
+    func requestAPIJSON(api: ClientApi, parameters: [String: Any]? = nil) -> Observable<(HTTPURLResponse, Any)>{
+        let url = api.baseURL + api.path
+        return requestJSON(api.method, url)
+    }
+    
     func requestAPIJSON(api: ClientApi, parameters: [String: Any]? = nil,
                         headers: [String: String]? = nil, encoding: ParameterEncoding? = nil)  -> Observable<(HTTPURLResponse, Any)> {
         let url = api.baseURL + api.path
