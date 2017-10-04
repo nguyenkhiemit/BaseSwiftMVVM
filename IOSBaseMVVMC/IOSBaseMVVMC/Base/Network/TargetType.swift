@@ -13,7 +13,7 @@ import Alamofire
 public protocol TargetType {
     
     /// The target's base `URL`.
-    var baseURL: URL { get }
+    var baseURL: String { get }
     
     /// The path to be appended to `baseURL` to form the full `URL`.
     var path: String { get }
@@ -21,14 +21,14 @@ public protocol TargetType {
     /// The HTTP method used in the request.
     var method: HTTPMethod { get }
     
-    /// The parameters to be encoded in the request.
-    var parameters: [String: Any]? { get }
+//    /// The parameters to be encoded in the request.
+//    var parameters: [String: Any]? { get }
+//
+//    /// The method used for parameter encoding.
+//    var parameterEncoding: ParameterEncoding { get }
     
-    /// The method used for parameter encoding.
-    var parameterEncoding: ParameterEncoding { get }
-    
-    /// Provides stub data for use in testing.
-    var sampleData: Data { get }
+//    /// Provides stub data for use in testing.
+//    var sampleData: Data { get }
     
     /// The type of HTTP task to be performed.
     var task: Task { get }

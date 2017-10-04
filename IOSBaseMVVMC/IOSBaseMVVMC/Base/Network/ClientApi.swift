@@ -9,7 +9,7 @@
 import Foundation
 import Alamofire
 
-enum ClientApi{
+enum ClientApi {
     
     case register
     
@@ -20,10 +20,10 @@ enum ClientApi{
 }
 
 extension ClientApi: TargetType {
-    
+
     /// The target's base `URL`.
-    var baseURL: URL {
-        return URL(string: BASE_URL)!
+    var baseURL: String {
+        return BASE_URL
     }
     
     /// The path to be appended to `baseURL` to form the full `URL`.
@@ -48,22 +48,6 @@ extension ClientApi: TargetType {
         case .userInfo:
             return .get
         }
-    }
-    
-    
-    /// The parameters to be encoded in the request.
-    var parameters: [String : Any]? {
-        return nil
-    }
-    
-    /// The method used for parameter encoding.
-    var parameterEncoding: ParameterEncoding {
-        return JSONEncoding.default
-    }
-    
-    /// Provides stub data for use in testing.
-    var sampleData: Data {
-        return "".data(using: .utf8)!
     }
     
     /// The type of HTTP task to be performed.

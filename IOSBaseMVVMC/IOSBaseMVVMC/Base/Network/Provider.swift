@@ -12,11 +12,6 @@ import Alamofire
 import RxSwift
 import RxCocoa
 
-typealias NetworkStartHandler = (() -> (Void))
-typealias NetworkFinishedHandler = (() -> (Void))
-typealias NetworkRequestSuccess = (() -> (Void))
-typealias NetworkRequestFailure = (() -> (Void))
-
 class Provider {
     
     private let networkTimeout: TimeInterval = 15.0
@@ -47,9 +42,44 @@ class Provider {
 }
 
 extension Provider {
-    func requestNetwork(api: ClientApi, parameters: [String: Any]? = nil,
-                        headers: [String: String]? = nil, encoding: ParameterEncoding? = nil) {
+    func requestAPIJSON(api: ClientApi, parameters: [String: Any]? = nil,
+                        headers: [String: String]? = nil, encoding: ParameterEncoding? = nil)  -> Observable<(HTTPURLResponse, Any)> {
+        let url = api.baseURL + api.path
         
+        let finalHeaders: [String: String] = {
+            if let headers = headers {
+                return headers
+            }
+            return getDefaultHeaderTypeJSON()
+        }()
+        
+        let finalEncoding: ParameterEncoding = {
+            if let encoding = encoding {
+                return encoding
+            }
+            return JSONEncoding.default
+        }()
+        return requestJSON(api.method, url, parameters: parameters, encoding: finalEncoding, headers: finalHeaders)
+    }
+    
+    func requestAPIData(api: ClientApi, parameters: [String: Any]? = nil,
+                        headers: [String: String]? = nil, encoding: ParameterEncoding? = nil) -> Observable<(HTTPURLResponse, Data)> {
+        let url = api.baseURL + api.path
+        
+        let finalHeaders: [String: String] = {
+            if let headers = headers {
+                return headers
+            }
+            return getDefaultHeaderTypeJSON()
+        }()
+        
+        let finalEncoding: ParameterEncoding = {
+            if let encoding = encoding {
+                return encoding
+            }
+            return JSONEncoding.default
+        }()
+        return requestData(api.method, url, parameters: parameters, encoding: finalEncoding, headers: finalHeaders)
     }
 }
 
