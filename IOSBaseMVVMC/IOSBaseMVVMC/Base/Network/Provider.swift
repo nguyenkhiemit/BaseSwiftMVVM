@@ -49,6 +49,8 @@ extension Provider {
                         headers: [String: String]? = nil, encoding: ParameterEncoding? = nil)  -> Observable<(HTTPURLResponse, Any)> {
         let url = api.baseURL + api.path
         
+        print("===> url = \(url)")
+        
         let finalHeaders: [String: String] = {
             if let headers = headers {
                 return headers
@@ -65,7 +67,6 @@ extension Provider {
         
         return requestJSON(api.method, url, parameters: parameters, encoding: finalEncoding, headers: finalHeaders)
             .debug()
-            .retry(2)
             .timeout(networkTimeout, scheduler: backgroundScheduler)
     }
     
@@ -86,6 +87,7 @@ extension Provider {
             }
             return JSONEncoding.default
         }()
+        
         return requestData(api.method, url, parameters: parameters, encoding: finalEncoding, headers: finalHeaders)
             .debug()
             .retry(2)

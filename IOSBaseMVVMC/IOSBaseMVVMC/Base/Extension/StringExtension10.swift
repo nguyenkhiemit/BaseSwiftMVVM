@@ -1,8 +1,8 @@
 //
-//  StringExtension1.swift
+//  StringExtension10.swift
 //  IOSBaseMVVMC
 //
-//  Created by Nguyen on 10/5/17.
+//  Created by KhiemND on 10/5/17.
 //  Copyright © 2017 Apple. All rights reserved.
 //
 

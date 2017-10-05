@@ -34,7 +34,7 @@ class AuthenticationRequestManager {
             "grant_type": GRANT_PASS_TYPE
         ]
         provider.requestAPIJSON(api: ClientApi.login, parameters: param, headers: nil, encoding: nil).map {
-            reponse, json -> LoginResponse in
+            response, json -> LoginResponse in
             let json = json as? [String: Any]
             let loginResponse = Mapper<LoginResponse>().map(JSONObject: json)
             return loginResponse!
@@ -44,7 +44,20 @@ class AuthenticationRequestManager {
         }
     }
     
-    func register(username: String, password: String) {
-        
+    func register(username: String, password: String) -> Completable {
+        return registerRequest(username: username, password: password).ignoreElements()
+    }
+    
+    func registerRequest(username: String, password: String) -> Observable<RegisterResponse> {
+        let param: [String: Any] = [
+            "email": username,
+            "password": password
+        ]
+        return provider.requestAPIJSON(api: ClientApi.register, parameters: param, headers: nil, encoding: nil).flatMap {
+            response, json -> Observable<RegisterResponse> in
+            let json = json as? [String: Any]
+            let registerResponse = Mapper<RegisterResponse>().map(JSONObject: json)
+            return Observable.just(registerResponse!)
+        }
     }
 }

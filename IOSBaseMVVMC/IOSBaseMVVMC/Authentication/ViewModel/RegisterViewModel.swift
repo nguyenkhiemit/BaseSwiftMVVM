@@ -12,6 +12,10 @@ import RxCocoa
 
 class RegisterViewModel {
     
+    lazy var requestManager = {
+       return AuthenticationRequestManager()
+    }()
+    
     var delegate: RegisterCoordinatorDelegate?
     
     var usernameVariable = Variable<String>("")
@@ -27,7 +31,9 @@ class RegisterViewModel {
     }
     
     func register() {
-        
+        var username = usernameVariable.value
+        var password = passwordVariable.value
+        requestManager.register(username: username, password: password)
     }
     
 }

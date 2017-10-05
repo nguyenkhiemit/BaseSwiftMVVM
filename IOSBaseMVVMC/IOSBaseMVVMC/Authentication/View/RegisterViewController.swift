@@ -49,11 +49,11 @@ class RegisterViewController: UIViewController {
         }.bindTo((viewModel?.passwordVariable)!)
         
         registerButton.rx.tap
-            .debounce(0.5, scheduler: MainScheduler.instance)
-            .subscribe({
-                [weak self] _ in
-                self?.viewModel?.register()
-            }).disposed(by: disposeBag)
+        .debounce(0.5, scheduler: MainScheduler.instance)
+        .subscribe({
+            [weak self] _ in
+            self?.viewModel?.register()
+        }).disposed(by: disposeBag)
     }
     
     func back() {
