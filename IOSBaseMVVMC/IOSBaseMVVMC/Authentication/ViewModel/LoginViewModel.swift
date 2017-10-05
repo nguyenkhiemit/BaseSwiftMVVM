@@ -7,13 +7,22 @@
 //
 
 import Foundation
+import RxSwift
+import RxCocoa
 
 class LoginViewModel {
     
+    var usernameVariable = Variable<String>("")
+    
+    var passwordVariable = Variable<String>("")
+
     var delegate: LoginCoordinatorDelegate?
     
+    lazy var requestManager = {
+        return AuthenticationRequestManager()
+    }()
+    
     init() {
-        
     }
     
     func openRegisterScreen() {
@@ -21,7 +30,11 @@ class LoginViewModel {
     }
     
     func login() {
-        
+        print("username = \(self.usernameVariable.value)")
+        print("password = \(self.passwordVariable.value)")
+        let username = self.usernameVariable.value
+        let password = self.passwordVariable.value
+        requestManager.loginRequest(username: username, password: password)
     }
     
     func back() {
