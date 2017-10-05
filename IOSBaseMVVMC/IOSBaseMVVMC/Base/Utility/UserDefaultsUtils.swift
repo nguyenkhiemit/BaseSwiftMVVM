@@ -37,7 +37,7 @@ class UserDefaultUtils {
         return fabs(dateFromExpired.timeIntervalSinceNow) > 86400
     }
     
-    func getAccessTokenValidate() -> String? {
+    func getAccessTokenWithValidate() -> String? {
         if isValiAccessToken() {
             guard let tokenType = get(key: .authTokenType) as? String else {
                 return nil

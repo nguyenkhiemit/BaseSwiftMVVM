@@ -38,13 +38,17 @@ class LoginViewController: UIViewController {
     }
     
     func bindView() {
+        backButton.isUserInteractionEnabled = true
+        let tapRecognizer = UITapGestureRecognizer(target: self, action: #selector(back))
+        backButton.addGestureRecognizer(tapRecognizer)
+        
         usernameTextField.rx.text.map {
             $0 ?? ""
-        }.bindTo(viewModel!.usernameVariable)
+            }.bindTo((viewModel?.usernameVariable)!)
         
         passwordTextField.rx.text.map {
             $0 ?? ""
-        }.bindTo(viewModel!.passwordVariable)
+            }.bindTo((viewModel?.passwordVariable)!)
         
         registerButton.rx.tap
             .debounce(0.2, scheduler: MainScheduler.instance)
@@ -52,10 +56,6 @@ class LoginViewController: UIViewController {
                 [weak self] _ in
                 self?.viewModel?.openRegisterScreen()
             }).disposed(by: disposeBag)
-        
-        backButton.isUserInteractionEnabled = true
-        let tapRecognizer = UITapGestureRecognizer(target: self, action: #selector(back))
-        backButton.addGestureRecognizer(tapRecognizer)
         
         loginButton.rx.tap
             .debounce(0.5, scheduler: MainScheduler.instance)

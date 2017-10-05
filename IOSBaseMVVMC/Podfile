@@ -24,4 +24,6 @@ target 'IOSBaseMVVMC' do
   pod 'SwiftEventBus'
   pod 'RxAlamofire'
   pod 'SwiftyJSON'
+  pod 'ObjectMapper'
+
 end

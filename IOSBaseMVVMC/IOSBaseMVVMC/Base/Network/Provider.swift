@@ -14,12 +14,14 @@ import RxCocoa
 
 class Provider {
     
-    private let networkTimeout: TimeInterval = 15.0
+    fileprivate let networkTimeout: TimeInterval = 15.0
+    
+    fileprivate let backgroundScheduler = ConcurrentDispatchQueueScheduler(qos: .background)
     
     fileprivate func getDefaultHeaderTypeJSON() -> [String: String] {
         var headers = [String: String]()
         headers["Content-Type"] = "application/json; charset=UTF-8"
-        if let accessToken = UserDefaultUtils.instance.getAccessTokenValidate() {
+        if let accessToken = UserDefaultUtils.instance.getAccessTokenWithValidate() {
             headers["Authorization"] = accessToken
         }
         return headers
@@ -43,11 +45,6 @@ class Provider {
 
 extension Provider {
     
-    func requestAPIJSON(api: ClientApi, parameters: [String: Any]? = nil) -> Observable<(HTTPURLResponse, Any)>{
-        let url = api.baseURL + api.path
-        return requestJSON(api.method, url)
-    }
-    
     func requestAPIJSON(api: ClientApi, parameters: [String: Any]? = nil,
                         headers: [String: String]? = nil, encoding: ParameterEncoding? = nil)  -> Observable<(HTTPURLResponse, Any)> {
         let url = api.baseURL + api.path
@@ -65,7 +62,11 @@ extension Provider {
             }
             return JSONEncoding.default
         }()
+        
         return requestJSON(api.method, url, parameters: parameters, encoding: finalEncoding, headers: finalHeaders)
+            .debug()
+            .retry(2)
+            .timeout(networkTimeout, scheduler: backgroundScheduler)
     }
     
     func requestAPIData(api: ClientApi, parameters: [String: Any]? = nil,
@@ -86,6 +87,9 @@ extension Provider {
             return JSONEncoding.default
         }()
         return requestData(api.method, url, parameters: parameters, encoding: finalEncoding, headers: finalHeaders)
+            .debug()
+            .retry(2)
+            .timeout(networkTimeout, scheduler: backgroundScheduler)
     }
 }
 

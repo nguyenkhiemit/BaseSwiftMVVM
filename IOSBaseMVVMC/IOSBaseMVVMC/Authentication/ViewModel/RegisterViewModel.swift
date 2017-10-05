@@ -7,10 +7,16 @@
 //
 
 import Foundation
+import RxSwift
+import RxCocoa
 
 class RegisterViewModel {
     
     var delegate: RegisterCoordinatorDelegate?
+    
+    var usernameVariable = Variable<String>("")
+    
+    var passwordVariable = Variable<String>("")
     
     init() {
         
@@ -18,6 +24,10 @@ class RegisterViewModel {
     
     func back() {
         delegate?.back()
+    }
+    
+    func register() {
+        
     }
     
 }

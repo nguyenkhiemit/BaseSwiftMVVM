@@ -282,6 +282,9 @@
                     </view>
                     <connections>
                         <outlet property="backButton" destination="rZX-zl-TZm" id="mE1-W7-0yj"/>
+                        <outlet property="passwordTextField" destination="cRt-XH-L8S" id="aeJ-ws-BMU"/>
+                        <outlet property="registerButton" destination="ghT-cl-Wte" id="drs-1E-rqO"/>
+                        <outlet property="usernameTextField" destination="AXD-qP-gpg" id="6kj-yy-a2I"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="7tK-CN-YpW" userLabel="First Responder" sceneMemberID="firstResponder"/>

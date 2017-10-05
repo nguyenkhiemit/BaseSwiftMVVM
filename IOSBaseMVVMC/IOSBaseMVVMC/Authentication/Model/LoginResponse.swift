@@ -7,19 +7,23 @@
 //
 
 import Foundation
-import SwiftyJSON
+import ObjectMapper
 
-class LoginResponse {
+class LoginResponse: Mappable {
     
     var accessToken: String?
     var tokenType: String?
     var refreshToken: String?
     var scope: String?
     
-    init(json: JSON) {
-        accessToken = json["access_token"].string
-        tokenType = json["token_type"].string
-        refreshToken = json["refresh_token"].string
-        scope = json["scope"].string
+    required init?(map: Map) {
+        
+    }
+    
+    public func mapping(map: Map) {
+        accessToken <- map["access_token"]
+        tokenType <- map["token_type"]
+        refreshToken <- map["refresh_token"]
+        scope <- map["scope"]
     }
 }

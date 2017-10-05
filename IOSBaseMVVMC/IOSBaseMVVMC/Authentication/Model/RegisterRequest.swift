@@ -10,4 +10,22 @@ import Foundation
 
 struct RegisterRequest {
     
+    var username: String {
+        get {
+            return self.username
+        }
+        set {
+            self.username = newValue
+        }
+    }
+    
+    var password: String {
+        get {
+            return self.password
+        }
+        set {
+            self.password = newValue
+        }
+    }
+
 }

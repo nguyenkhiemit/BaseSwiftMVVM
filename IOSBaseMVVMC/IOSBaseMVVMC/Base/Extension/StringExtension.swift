@@ -1,8 +1,8 @@
 //
-//  StringExtension.swift
+//  StringExtension1.swift
 //  IOSBaseMVVMC
 //
-//  Created by Nguyen on 9/29/17.
+//  Created by Nguyen on 10/5/17.
 //  Copyright © 2017 Apple. All rights reserved.
 //
 
@@ -21,4 +21,5 @@ extension String {
         }
         return self
     }
+    
 }
