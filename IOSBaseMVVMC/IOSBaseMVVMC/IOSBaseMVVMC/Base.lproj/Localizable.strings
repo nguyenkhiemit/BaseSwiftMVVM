@@ -15,3 +15,11 @@
 "Title About Me" = "Về tôi";
 
 "About Me" = "VÊ TÔI";
+
+"Warning pass empty" = "Mật khẩu không được để trống";
+
+"Warning pass format" = "Mật khẩu phải chứa từ 8 kỳ tự trở lên";
+
+"Warning email empty" = "Email không được để trống";
+
+"Warning email format" = "Email không đúng định dạng";

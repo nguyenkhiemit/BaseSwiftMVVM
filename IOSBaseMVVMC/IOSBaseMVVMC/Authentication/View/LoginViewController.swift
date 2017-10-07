@@ -20,6 +20,10 @@ class LoginViewController: UIViewController {
     
     @IBOutlet weak var passwordTextField: UITextField!
     
+    @IBOutlet weak var validateEmailLabel: UILabel!
+    
+    @IBOutlet weak var validatePasswordLabel: UILabel!
+    
     @IBOutlet weak var loginButton: UIButton!
     
     @IBOutlet weak var registerButton: UIButton!
@@ -44,11 +48,21 @@ class LoginViewController: UIViewController {
         
         usernameTextField.rx.text.map {
             $0 ?? ""
-            }.bindTo((viewModel?.usernameVariable)!)
+        }.bindTo((viewModel?.usernameVariable)!)
+        .disposed(by: disposeBag)
         
         passwordTextField.rx.text.map {
             $0 ?? ""
-            }.bindTo((viewModel?.passwordVariable)!)
+        }.bindTo((viewModel?.passwordVariable)!)
+        .disposed(by: disposeBag)
+        
+        viewModel?.validateEmailVariable.asObservable()
+        .bindTo(validateEmailLabel.rx.text)
+        .disposed(by: disposeBag)
+        
+        viewModel?.validatePasswordVariable.asObservable()
+        .bindTo(validatePasswordLabel.rx.text)
+        .disposed(by: disposeBag)
         
         registerButton.rx.tap
             .debounce(0.2, scheduler: MainScheduler.instance)

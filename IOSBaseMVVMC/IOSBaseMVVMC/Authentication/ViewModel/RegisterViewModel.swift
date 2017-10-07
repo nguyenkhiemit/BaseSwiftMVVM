@@ -22,6 +22,11 @@ class RegisterViewModel {
     
     var passwordVariable = Variable<String>("")
     
+    var validateEmailVariable = Variable<String>("")
+    
+    var validatePasswordVariable = Variable<String>("")
+
+    
     init() {
         
     }
@@ -33,10 +38,22 @@ class RegisterViewModel {
     func register() {
         let username = usernameVariable.value
         let password = passwordVariable.value
-//        var registerRequest = RegisterRequest()
-//        registerRequest.username = username
-//        registerRequest.password = password
-        requestManager.register(username: username, password: password).subscribe {
+        if username.validateEmail() != "" {
+            validateEmailVariable.value = username.validateEmail()
+            return
+        } else {
+            validateEmailVariable.value = ""
+        }
+        if password.validatePassword() != "" {
+            validatePasswordVariable.value = password.validatePassword()
+            return
+        } else {
+            validatePasswordVariable.value = ""
+        }
+        var registerRequest = RegisterRequest()
+        registerRequest.username = username
+        registerRequest.password = password
+        requestManager.register(registerRequest: registerRequest).subscribe {
             response in
             
         }

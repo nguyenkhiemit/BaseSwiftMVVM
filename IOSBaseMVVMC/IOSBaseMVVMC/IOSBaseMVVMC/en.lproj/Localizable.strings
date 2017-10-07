@@ -15,3 +15,11 @@
 "Title About Me" = "About Me";
 
 "About Me" = "ABOUT ME";
+
+"Warning pass empty" = "Password can't empty";
+
+"Warning pass format" = "Password must have length more than 8";
+
+"Warning email empty" = "Email can't empty";
+
+"Warning email format" = "Email wrong format";

@@ -25,29 +25,29 @@ class AuthenticationRequestManager {
        return Provider()
     }()
     
-    func login(username: String, password: String) -> Observable<AccountResponse> {
-        let loginObservable: Observable<LoginResponse> = doLoginRequest(username: username, password: password)
+    func login(loginRequest: LoginRequest) -> Observable<AccountResponse> {
+        let loginObservable: Observable<LoginResponse> = doLoginRequest(loginRequest: loginRequest)
         return loginObservable.flatMap {
             _ in
             return self.doGetAccountRequest()
         }
     }
     
-    func register(username: String, password: String) -> Observable<AccountResponse> {
+    func register(registerRequest: RegisterRequest) -> Observable<AccountResponse> {
         var loginRequest = LoginRequest()
-        loginRequest.username = username
-        loginRequest.password = password
-        let registerObservale: Observable<RegisterResponse> = doRegisterRequest(username: username, password: password)
+        loginRequest.username = registerRequest.username
+        loginRequest.password = registerRequest.password
+        let registerObservale: Observable<RegisterResponse> = doRegisterRequest(registerRequest: registerRequest)
         return registerObservale.flatMap {
             _ in
-            return self.login(username: username, password: password)
+            return self.login(loginRequest: loginRequest)
         }
     }
     
-    func doLoginRequest(username: String, password: String) -> Observable<LoginResponse> {
+    func doLoginRequest(loginRequest: LoginRequest) -> Observable<LoginResponse> {
         let param: [String: Any] = [
-            "username": username,
-            "password": password,
+            "username": loginRequest.username,
+            "password": loginRequest.password,
             "client_id": CLIENT_ID,
             "client_secret": CLIENT_SECRET,
             "grant_type": GRANT_PASS_TYPE
@@ -79,10 +79,10 @@ class AuthenticationRequestManager {
         }
     }
     
-    func doRegisterRequest(username: String, password: String) -> Observable<RegisterResponse> {
+    func doRegisterRequest(registerRequest: RegisterRequest) -> Observable<RegisterResponse> {
         let param: [String: Any] = [
-            "email": username,
-            "password": password
+            "email": registerRequest.username,
+            "password": registerRequest.password
         ]
         return provider.requestAPIJSON(api: ClientApi.register, parameters: param, headers: nil, encoding: nil).flatMap {
             response, json -> Observable<RegisterResponse> in
@@ -92,7 +92,7 @@ class AuthenticationRequestManager {
             guard let registerResponse = Mapper<RegisterResponse>().map(JSONObject: json) else {
                 return Observable.error(CommonError.parsingError)
             }
-        return Observable.just(registerResponse)
+            return Observable.just(registerResponse)
         }
     }
 }

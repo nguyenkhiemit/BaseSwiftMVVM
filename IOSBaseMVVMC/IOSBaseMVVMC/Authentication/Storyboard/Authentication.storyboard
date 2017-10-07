@@ -49,7 +49,7 @@
                                             <constraint firstAttribute="height" constant="21" id="png-3F-ASK"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" type="system" pointSize="11"/>
-                                        <nil key="textColor"/>
+                                        <color key="textColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7J9-E4-ert">
@@ -58,7 +58,7 @@
                                             <constraint firstAttribute="height" constant="21" id="Sek-uA-Fvj"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" type="system" pointSize="11"/>
-                                        <nil key="textColor"/>
+                                        <color key="textColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BGs-a8-TpB">
@@ -150,6 +150,8 @@
                         <outlet property="passwordTextField" destination="pwr-EL-IbB" id="mty-N5-UrE"/>
                         <outlet property="registerButton" destination="ZTU-cj-EKX" id="mnq-4i-897"/>
                         <outlet property="usernameTextField" destination="gQ8-Nr-RUS" id="a2a-8O-JxM"/>
+                        <outlet property="validateEmailLabel" destination="i2n-M7-Gh4" id="9CX-1D-WHa"/>
+                        <outlet property="validatePasswordLabel" destination="7J9-E4-ert" id="DRe-Vq-Ye7"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ffa-E5-Uxm" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -196,7 +198,7 @@
                                             <constraint firstAttribute="height" constant="21" id="fvD-88-YeG"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" type="system" pointSize="11"/>
-                                        <nil key="textColor"/>
+                                        <color key="textColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CPo-dW-uyW">
@@ -205,7 +207,7 @@
                                             <constraint firstAttribute="height" constant="21" id="bmF-3d-kqv"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" type="system" pointSize="11"/>
-                                        <nil key="textColor"/>
+                                        <color key="textColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ghT-cl-Wte">
@@ -285,6 +287,8 @@
                         <outlet property="passwordTextField" destination="cRt-XH-L8S" id="aeJ-ws-BMU"/>
                         <outlet property="registerButton" destination="ghT-cl-Wte" id="drs-1E-rqO"/>
                         <outlet property="usernameTextField" destination="AXD-qP-gpg" id="6kj-yy-a2I"/>
+                        <outlet property="validateEmailLabel" destination="bVB-Ll-HPf" id="zVb-cP-IcG"/>
+                        <outlet property="validatePasswordLabel" destination="CPo-dW-uyW" id="x5d-YG-wvm"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="7tK-CN-YpW" userLabel="First Responder" sceneMemberID="firstResponder"/>
