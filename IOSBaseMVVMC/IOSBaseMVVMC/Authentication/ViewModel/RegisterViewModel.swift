@@ -31,9 +31,15 @@ class RegisterViewModel {
     }
     
     func register() {
-        var username = usernameVariable.value
-        var password = passwordVariable.value
-        requestManager.register(username: username, password: password)
+        let username = usernameVariable.value
+        let password = passwordVariable.value
+//        var registerRequest = RegisterRequest()
+//        registerRequest.username = username
+//        registerRequest.password = password
+        requestManager.register(username: username, password: password).subscribe {
+            response in
+            
+        }
     }
     
 }

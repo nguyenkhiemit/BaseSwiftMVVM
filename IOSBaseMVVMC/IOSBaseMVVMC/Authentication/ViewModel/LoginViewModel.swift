@@ -18,6 +18,8 @@ class LoginViewModel {
 
     var delegate: LoginCoordinatorDelegate?
     
+    var disposeBag = DisposeBag()
+    
     lazy var requestManager = {
         return AuthenticationRequestManager()
     }()
@@ -30,11 +32,15 @@ class LoginViewModel {
     }
     
     func login() {
-        print("username = \(self.usernameVariable.value)")
-        print("password = \(self.passwordVariable.value)")
         let username = self.usernameVariable.value
         let password = self.passwordVariable.value
-        requestManager.loginRequest(username: username, password: password)
+        var loginRequest = LoginRequest()
+        loginRequest.username = username
+        loginRequest.password = password
+        requestManager.login(username: username, password: password).subscribe {
+            response in
+            print("login response = \(response.element?.email!)")
+        }.disposed(by: disposeBag)
     }
     
     func back() {

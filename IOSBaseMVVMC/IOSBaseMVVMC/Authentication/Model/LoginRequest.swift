@@ -8,22 +8,7 @@
 
 import Foundation
 
-class LoginRequest {
-    var username: String {
-        get {
-            return self.username
-        }
-        set {
-            self.username = newValue
-        }
-    }
-    var password: String {
-        get {
-            return self.username
-        }
-        set {
-            self.password = newValue
-        }
-    }
-    
+struct LoginRequest {
+    var username: String?
+    var password: String?
 }

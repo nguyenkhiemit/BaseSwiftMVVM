@@ -38,17 +38,15 @@ class UserDefaultUtils {
     }
     
     func getAccessTokenWithValidate() -> String? {
-        if isValiAccessToken() {
-            guard let tokenType = get(key: .authTokenType) as? String else {
-                return nil
-            }
-            
-            guard let accessToken = get(key: .authRefreshToken) as? String else {
-                return nil
-            }
-            return "\(tokenType) \(accessToken)"
+        guard let tokenType = getTokenType() else {
+            return nil
         }
-        return nil
+
+        guard let accessToken = getAccessToken() else {
+            return nil
+        }
+
+        return "\(tokenType) \(accessToken)"
     }
     
     func getExpriesIn() -> TimeInterval? {
@@ -65,5 +63,9 @@ class UserDefaultUtils {
     
     func getTokenType() -> String? {
         return get(key: .authTokenType) as? String
+    }
+    
+    func getAccessToken() -> String? {
+        return get(key: .authAccessToken) as? String
     }
 }

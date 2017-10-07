@@ -8,6 +8,6 @@
 
 import Foundation
 
-enum AccountRequest {
-    
+struct AccountRequest {
+    var accessToken: String?
 }
