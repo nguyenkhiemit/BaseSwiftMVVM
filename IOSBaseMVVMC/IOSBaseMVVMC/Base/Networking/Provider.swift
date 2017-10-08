@@ -31,6 +31,14 @@ class Provider {
         return "application/x-www-form-urlencoded"
     }
     
+    fileprivate func getDefaultEncoding(method: HTTPMethod) -> ParameterEncoding {
+        if method == .get {
+            return URLEncoding.default
+        } else {
+            return JSONEncoding.default
+        }
+    }
+    
     fileprivate func createBodyDataString(parameters: [String: Any]) -> String {
         var parts = [String]()
         let escape = CharacterSet.init(charactersIn: "#%/<>?@\\^`{|};").inverted
@@ -45,29 +53,32 @@ class Provider {
 
 extension Provider {
     
-    func requestAPIJSON(api: ClientApi, parameters: [String: Any]? = nil,
-                        headers: [String: String]? = nil, encoding: ParameterEncoding? = nil)  -> Observable<(HTTPURLResponse, Any)> {
+    func requestAPIJSON(api: ClientApi,
+                        parameters: [String: Any]? = nil,
+                        encoding: ParameterEncoding? = nil,
+                        headers: [String: String]? = nil)  -> Observable<(HTTPURLResponse, Any)> {
         let url = api.baseURL + api.path
        
+        let finalEncoding: ParameterEncoding = {
+            if let encoding = encoding {
+                return encoding
+            }
+            return getDefaultEncoding(method: api.method)
+        }()
+        
         let finalHeaders: [String: String] = {
             if let headers = headers {
                 return headers
             }
             return getDefaultHeaderTypeJSON()
         }()
-        
-        let finalEncoding: ParameterEncoding = {
-            if let encoding = encoding {
-                return encoding
-            }
-            return JSONEncoding.default
-        }()
+    
         print("url = \(url)")
-        print("parameters = \(parameters)")
+        print("parameters = \(parameters ?? [:])")
         print("headers = \(finalHeaders)")
         return requestJSON(api.method, url, parameters: parameters, encoding: finalEncoding, headers: finalHeaders)
-            .debug()
-            .timeout(networkTimeout, scheduler: backgroundScheduler)
+        .debug()
+        .timeout(networkTimeout, scheduler: backgroundScheduler)
     }
     
     func requestAPIData(api: ClientApi, parameters: [String: Any]? = nil,
@@ -89,9 +100,9 @@ extension Provider {
         }()
         
         return requestData(api.method, url, parameters: parameters, encoding: finalEncoding, headers: finalHeaders)
-            .debug()
-            .retry(2)
-            .timeout(networkTimeout, scheduler: backgroundScheduler)
+        .debug()
+        .retry(2)
+        .timeout(networkTimeout, scheduler: backgroundScheduler)
     }
 }
 

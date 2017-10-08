@@ -42,13 +42,10 @@ class HomeViewController: UIViewController {
     
     func bindData() {
         let arrayBooking: Observable<[Booking]> = viewModel!.loadListBooking(page: 1, pageSize: 10)
-        arrayBooking.subscribe {
-            print("\($0)")
-        }
-//        arrayBooking.bindTo(tableView.rx.items(cellIdentifier: HomeTableViewCell.CellIdentifier, cellType: HomeTableViewCell.self)) {
-//            row, element, cell in
-//            cell.bindData(booking: element)
-//        }.disposed(by: disposeBag)
+        arrayBooking.bindTo(tableView.rx.items(cellIdentifier: HomeTableViewCell.CellIdentifier, cellType: HomeTableViewCell.self)) {
+            row, element, cell in
+            cell.bindData(booking: element)
+        }.disposed(by: disposeBag)
     }
     
     override func viewDidDisappear(_ animated: Bool) {

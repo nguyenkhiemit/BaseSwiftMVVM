@@ -22,20 +22,18 @@ class HomeRequestManager {
     
     func getListBooking(bookingRequest: BookingRequest) -> Observable<BookingResponse> {
         let param: [String: Any] = [
-            "page": bookingRequest.page,
-            "page_size": bookingRequest.pageSize
+            "page": bookingRequest.page ?? 0,
+            "page_size": bookingRequest.pageSize ?? 0
         ]
+        
         return provider.requestAPIJSON(api: ClientApi.listBooking, parameters: param).flatMap {
             response, json -> Observable<BookingResponse> in
-            
             guard let json = json as? [String: Any] else {
                 return Observable.error(CommonError.parsingError)
             }
-            
             guard let bookingResponse = Mapper<BookingResponse>().map(JSONObject: json) else {
                 return Observable.error(CommonError.parsingError)
             }
-            
             return Observable.just(bookingResponse)
         }
     }

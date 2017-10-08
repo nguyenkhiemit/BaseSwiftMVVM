@@ -9,6 +9,7 @@
 import Foundation
 import RxSwift
 import RxCocoa
+import Alamofire
 
 class HomeViewModel {
     
@@ -26,19 +27,19 @@ class HomeViewModel {
         delegate?.openNewScreen(index: index)
     }
     
-    func loadListBooking(page: Int, pageSize: Int) -> Observable<[Booking]>{
+    func loadListBooking(page: Int, pageSize: Int) -> Driver<Result<[Booking]>> {
         var bookingRequest: BookingRequest = BookingRequest()
         bookingRequest.page = page
         bookingRequest.pageSize = pageSize
-        return requestManager.getListBooking(bookingRequest: bookingRequest).flatMap {
-            response -> Observable<[Booking]> in
+        return requestManager.getListBooking(bookingRequest: bookingRequest).map {
+            response -> Result<[Booking]> in
             guard let data = response.data else {
-                return Observable.error(CommonError.parsingError)
+                return Result.failure(CommonError.parsingError)
             }
             guard let results = data.results else {
-                return Observable.error(CommonError.parsingError)
+                return Result.failure(CommonError.parsingError)
             }
-            return Observable.just(results)
+            return Result.success(Observable.just(results))
         }
     }
 }
