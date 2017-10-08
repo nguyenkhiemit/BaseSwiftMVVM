@@ -39,15 +39,7 @@ class HomeViewController: UIViewController {
         let tapRecognizer = UITapGestureRecognizer(target: self, action: #selector(openMenu))
         menuButton.addGestureRecognizer(tapRecognizer)
     }
-    
-    func bindData() {
-        let arrayBooking: Observable<[Booking]> = viewModel!.loadListBooking(page: 1, pageSize: 10)
-        arrayBooking.bindTo(tableView.rx.items(cellIdentifier: HomeTableViewCell.CellIdentifier, cellType: HomeTableViewCell.self)) {
-            row, element, cell in
-            cell.bindData(booking: element)
-        }.disposed(by: disposeBag)
-    }
-    
+
     override func viewDidDisappear(_ animated: Bool) {
         SwiftEventBus.unregister(self)
     }
@@ -56,4 +48,28 @@ class HomeViewController: UIViewController {
         self.slideMenuController()?.openLeft()
     }
 
+}
+
+extension HomeViewController {
+    fileprivate func bindData() {
+        tableView.register(UINib(nibName: HomeTableViewCell.CellIdentifier, bundle: nil), forCellReuseIdentifier: HomeTableViewCell.CellIdentifier)
+        tableView.rowHeight = 220
+        viewModel?.loadListBooking(page: 1, pageSize: 10)
+        .map {
+            result -> [Booking] in
+            switch result {
+            case .success(let arrayBooking):
+                return arrayBooking
+            case .failure(let error):
+                print(error.localizedDescription)
+                return []
+            }
+        }
+        .drive(tableView.rx.items(cellIdentifier: HomeTableViewCell.CellIdentifier, cellType: HomeTableViewCell.self)) {
+            row, booking, cell in
+            cell.bindData(booking: booking)
+        }
+        .disposed(by: disposeBag)
+    }
+    
 }

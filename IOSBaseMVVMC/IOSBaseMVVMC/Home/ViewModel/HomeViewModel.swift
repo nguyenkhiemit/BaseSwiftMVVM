@@ -31,15 +31,6 @@ class HomeViewModel {
         var bookingRequest: BookingRequest = BookingRequest()
         bookingRequest.page = page
         bookingRequest.pageSize = pageSize
-        return requestManager.getListBooking(bookingRequest: bookingRequest).map {
-            response -> Result<[Booking]> in
-            guard let data = response.data else {
-                return Result.failure(CommonError.parsingError)
-            }
-            guard let results = data.results else {
-                return Result.failure(CommonError.parsingError)
-            }
-            return Result.success(Observable.just(results))
-        }
+        return requestManager.getListBooking(bookingRequest: bookingRequest)
     }
 }
