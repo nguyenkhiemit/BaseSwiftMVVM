@@ -17,6 +17,8 @@ enum ClientApi {
     
     case userInfo
     
+    case listBooking
+    
 }
 
 extension ClientApi: TargetType {
@@ -35,6 +37,8 @@ extension ClientApi: TargetType {
             return "users/register-user/"
         case .userInfo:
             return "users/profile/"
+        case .listBooking:
+            return "orders/booking-manage/"
         }
     }
     
@@ -46,6 +50,8 @@ extension ClientApi: TargetType {
         case .register:
             return .post
         case .userInfo:
+            return .get
+        case .listBooking:
             return .get
         }
     }

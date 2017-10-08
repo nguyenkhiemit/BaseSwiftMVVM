@@ -14,15 +14,10 @@ import Alamofire
 import SwiftyJSON
 import ObjectMapper
 
-enum CommonError : Error {
-    case parsingError
-    case networkError
-}
-
 class AuthenticationRequestManager {
     
     lazy var provider: Provider = {
-       return Provider()
+        return Provider()
     }()
     
     func login(loginRequest: LoginRequest) -> Observable<AccountResponse> {
@@ -46,13 +41,13 @@ class AuthenticationRequestManager {
     
     func doLoginRequest(loginRequest: LoginRequest) -> Observable<LoginResponse> {
         let param: [String: Any] = [
-            "username": loginRequest.username,
-            "password": loginRequest.password,
+            "username": loginRequest.username ?? "",
+            "password": loginRequest.password ?? "",
             "client_id": CLIENT_ID,
             "client_secret": CLIENT_SECRET,
             "grant_type": GRANT_PASS_TYPE
         ]
-        return provider.requestAPIJSON(api: ClientApi.login, parameters: param, headers: nil, encoding: nil).flatMap {
+        return provider.requestAPIJSON(api: ClientApi.login, parameters: param).flatMap {
             response, json -> Observable<LoginResponse> in
             guard let json = json as? [String: Any] else {
                 return Observable.error(CommonError.parsingError)
@@ -81,10 +76,10 @@ class AuthenticationRequestManager {
     
     func doRegisterRequest(registerRequest: RegisterRequest) -> Observable<RegisterResponse> {
         let param: [String: Any] = [
-            "email": registerRequest.username,
-            "password": registerRequest.password
+            "email": registerRequest.username ?? "",
+            "password": registerRequest.password ?? ""
         ]
-        return provider.requestAPIJSON(api: ClientApi.register, parameters: param, headers: nil, encoding: nil).flatMap {
+        return provider.requestAPIJSON(api: ClientApi.register, parameters: param).flatMap {
             response, json -> Observable<RegisterResponse> in
             guard let json = json as? [String: Any] else {
                 return Observable.error(CommonError.parsingError)

@@ -26,19 +26,7 @@ class MenuViewModel {
         return self.createData()
     }()
     
-//    var newScreenSubject = PublishSubject<Menu>()
-    
-    var t: Int = 0
-    
     init() {
-//        newScreenSubject
-//            .asObservable()
-//            .subscribe(onNext: {
-//                [unowned self] in
-//                print("\($0)")
-//                self.openNewScreen(index: $0.index!)
-//            })
-//            .disposed(by: disposeBag)
     }
 }
 

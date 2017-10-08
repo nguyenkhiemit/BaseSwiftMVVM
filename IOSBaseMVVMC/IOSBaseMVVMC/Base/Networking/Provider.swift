@@ -48,9 +48,7 @@ extension Provider {
     func requestAPIJSON(api: ClientApi, parameters: [String: Any]? = nil,
                         headers: [String: String]? = nil, encoding: ParameterEncoding? = nil)  -> Observable<(HTTPURLResponse, Any)> {
         let url = api.baseURL + api.path
-        
-        print("===> url = \(url)")
-        
+       
         let finalHeaders: [String: String] = {
             if let headers = headers {
                 return headers
@@ -64,7 +62,9 @@ extension Provider {
             }
             return JSONEncoding.default
         }()
-        
+        print("url = \(url)")
+        print("parameters = \(parameters)")
+        print("headers = \(finalHeaders)")
         return requestJSON(api.method, url, parameters: parameters, encoding: finalEncoding, headers: finalHeaders)
             .debug()
             .timeout(networkTimeout, scheduler: backgroundScheduler)

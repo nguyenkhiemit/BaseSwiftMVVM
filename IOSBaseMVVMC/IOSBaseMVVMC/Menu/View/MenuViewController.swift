@@ -54,15 +54,15 @@ class MenuViewController: UIViewController {
                 cell.setData(menu: element)
                 return cell
             }
-        }.addDisposableTo(disposeBag)
+        }.disposed(by: disposeBag)
         
         menuTableView.rx.modelSelected(Menu.self)
-            .subscribe(onNext: {
-                menu in
-                self.slideMenuController()?.closeLeft()
-                SwiftEventBus.post("index", sender: (menu.index as AnyObject))
-            })
-            .addDisposableTo(disposeBag)
+        .subscribe(onNext: {
+            menu in
+            self.slideMenuController()?.closeLeft()
+            SwiftEventBus.post("index", sender: (menu.index as AnyObject))
+        })
+        .disposed(by: disposeBag)
     }
     
 }

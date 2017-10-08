@@ -25,5 +25,7 @@ target 'IOSBaseMVVMC' do
   pod 'RxAlamofire'
   pod 'SwiftyJSON'
   pod 'ObjectMapper'
-
+  pod 'ICSPullToRefresh'
+  pod 'Kingfisher'
+  
 end

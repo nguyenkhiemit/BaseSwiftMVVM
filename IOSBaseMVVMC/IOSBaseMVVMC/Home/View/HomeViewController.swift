@@ -14,13 +14,18 @@ import SlideMenuControllerSwift
 
 class HomeViewController: UIViewController {
 
-    var viewModel: HomeViewModel?
+    @IBOutlet weak var tableView: UITableView!
     
     @IBOutlet weak var menuButton: UIImageView!
+    
+    var viewModel: HomeViewModel?
+    
+    var disposeBag = DisposeBag()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         bindView()
+        bindData()
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -33,6 +38,17 @@ class HomeViewController: UIViewController {
         menuButton.isUserInteractionEnabled = true
         let tapRecognizer = UITapGestureRecognizer(target: self, action: #selector(openMenu))
         menuButton.addGestureRecognizer(tapRecognizer)
+    }
+    
+    func bindData() {
+        let arrayBooking: Observable<[Booking]> = viewModel!.loadListBooking(page: 1, pageSize: 10)
+        arrayBooking.subscribe {
+            print("\($0)")
+        }
+//        arrayBooking.bindTo(tableView.rx.items(cellIdentifier: HomeTableViewCell.CellIdentifier, cellType: HomeTableViewCell.self)) {
+//            row, element, cell in
+//            cell.bindData(booking: element)
+//        }.disposed(by: disposeBag)
     }
     
     override func viewDidDisappear(_ animated: Bool) {

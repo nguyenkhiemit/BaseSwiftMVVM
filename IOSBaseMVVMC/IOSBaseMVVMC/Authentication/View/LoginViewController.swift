@@ -65,18 +65,18 @@ class LoginViewController: UIViewController {
         .disposed(by: disposeBag)
         
         registerButton.rx.tap
-            .debounce(0.2, scheduler: MainScheduler.instance)
-            .subscribe(onNext: {
-                [weak self] _ in
-                self?.viewModel?.openRegisterScreen()
-            }).disposed(by: disposeBag)
+        .debounce(0.2, scheduler: MainScheduler.instance)
+        .subscribe(onNext: {
+            [weak self] _ in
+            self?.viewModel?.openRegisterScreen()
+        }).disposed(by: disposeBag)
         
         loginButton.rx.tap
-            .debounce(0.5, scheduler: MainScheduler.instance)
-            .subscribe(onNext: {
-                [weak self] _ in
-                self?.viewModel?.login()
-            }).disposed(by: disposeBag)
+        .debounce(0.5, scheduler: MainScheduler.instance)
+        .subscribe(onNext: {
+            [weak self] _ in
+            self?.viewModel?.login()
+        }).disposed(by: disposeBag)
     }
     
     func back() {
