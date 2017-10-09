@@ -76,6 +76,7 @@ extension Provider {
         print("url = \(url)")
         print("parameters = \(parameters ?? [:])")
         print("headers = \(finalHeaders)")
+        print("Thread.isMainThread E = \(Thread.isMainThread)")
         return requestJSON(api.method, url, parameters: parameters, encoding: finalEncoding, headers: finalHeaders)
         .debug()
         .timeout(networkTimeout, scheduler: backgroundScheduler)

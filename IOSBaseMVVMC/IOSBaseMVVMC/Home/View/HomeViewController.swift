@@ -11,6 +11,7 @@ import RxSwift
 import RxCocoa
 import SwiftEventBus
 import SlideMenuControllerSwift
+import ICSPullToRefresh
 
 class HomeViewController: UIViewController {
 
@@ -22,10 +23,16 @@ class HomeViewController: UIViewController {
     
     var disposeBag = DisposeBag()
     
+    let PAGE_SIZE = 10
+    
+    var currentPage = 1
+    
+    var arrayBooking = [Booking]()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         bindView()
-        bindData()
+        bindData(page: currentPage)
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -38,6 +45,16 @@ class HomeViewController: UIViewController {
         menuButton.isUserInteractionEnabled = true
         let tapRecognizer = UITapGestureRecognizer(target: self, action: #selector(openMenu))
         menuButton.addGestureRecognizer(tapRecognizer)
+        
+        tableView.register(UINib(nibName: HomeTableViewCell.CellIdentifier, bundle: nil), forCellReuseIdentifier: HomeTableViewCell.CellIdentifier)
+        tableView.rowHeight = 220
+        
+        tableView.addPullToRefreshHandler {
+            self.bindData(page: 1)
+        }
+        tableView.addInfiniteScrollingWithHandler {
+            self.bindData(page: self.currentPage)
+        }
     }
 
     override func viewDidDisappear(_ animated: Bool) {
@@ -51,15 +68,22 @@ class HomeViewController: UIViewController {
 }
 
 extension HomeViewController {
-    fileprivate func bindData() {
-        tableView.register(UINib(nibName: HomeTableViewCell.CellIdentifier, bundle: nil), forCellReuseIdentifier: HomeTableViewCell.CellIdentifier)
-        tableView.rowHeight = 220
-        viewModel?.loadListBooking(page: 1, pageSize: 10)
+    fileprivate func bindData(page: Int) {
+        viewModel?.loadListBooking(page: page, pageSize: PAGE_SIZE)
         .map {
             result -> [Booking] in
+            if(self.tableView.showsPullToRefresh) {
+                self.tableView.pullToRefreshView?.stopAnimating()
+            }
+            if(self.tableView.showsInfiniteScrolling) {
+                self.tableView.infiniteScrollingView?.stopAnimating()
+            }
             switch result {
-            case .success(let arrayBooking):
-                return arrayBooking
+            case .success(let bookings):
+                print("X Bind data to table view !!!")
+                self.currentPage += 1
+                self.arrayBooking.append(contentsOf: bookings)
+                return self.arrayBooking
             case .failure(let error):
                 print(error.localizedDescription)
                 return []
@@ -69,7 +93,8 @@ extension HomeViewController {
             row, booking, cell in
             cell.bindData(booking: booking)
         }
-        .disposed(by: disposeBag)
+        .addDisposableTo(disposeBag)
+    
     }
     
 }

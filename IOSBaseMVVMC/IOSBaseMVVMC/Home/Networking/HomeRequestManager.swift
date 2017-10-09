@@ -25,26 +25,34 @@ class HomeRequestManager {
             "page": bookingRequest.page ?? 0,
             "page_size": bookingRequest.pageSize ?? 0
         ]
-        
-        return provider.requestAPIJSON(api: ClientApi.listBooking, parameters: param).map {
+        print("Thread.isMainThread B = \(Thread.isMainThread)")
+        return provider.requestAPIJSON(api: ClientApi.listBooking, parameters: param)
+            .subscribeOn(MainScheduler.instance)
+            .observeOn(ConcurrentDispatchQueueScheduler(qos: .background)) // we don’t really know from the code above that requestJSON will return
+            .observeOn(MainScheduler.instance)
+            .map {
             response, json -> Result<[Booking]> in
+            print("Thread.isMainThread C = \(Thread.isMainThread)")
             if(response.statusCode == 200) {
                 guard let json = json as? [String: Any] else {
-                    return Result.failure(CommonError.parsingError)
+                    return .failure(CommonError.parsingError)
                 }
                 guard let bookingResponse: BookingResponse = Mapper<BookingResponse>().map(JSONObject: json) else {
-                    return Result.failure(CommonError.parsingError)
+                    return .failure(CommonError.parsingError)
                 }
                 guard let bookingData = bookingResponse.data else {
-                    return Result.failure(CommonError.parsingError)
+                    return .failure(CommonError.parsingError)
                 }
                 guard let arrayBooking = bookingData.results else {
-                      return Result.failure(CommonError.parsingError)
+                      return .failure(CommonError.parsingError)
                 }
-                return Result.success(arrayBooking)
+                print("Thread.isMainThread D = \(Thread.isMainThread)")
+                return .success(arrayBooking)
             } else {
-                return Result.failure(CommonError.networkError)
+                return .failure(CommonError.networkError)
             }
-        }.asDriver(onErrorJustReturn: .failure(CommonError.parsingError)) 
+        }
+        .observeOn(MainScheduler.instance) // switch to MainScheduler, UI updates
+        .asDriver(onErrorJustReturn: .failure(CommonError.parsingError))
     }
 }
