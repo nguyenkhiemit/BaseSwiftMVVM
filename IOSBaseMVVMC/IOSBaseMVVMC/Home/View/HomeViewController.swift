@@ -74,7 +74,7 @@ class HomeViewController: UIViewController {
 
 extension HomeViewController {
     //load more with table normal
-    //don't use rx
+    //don't use Driver to bind tableview
     fileprivate func loadData(page: Int) {
         viewModel?.loadListData(page: page, pageSize: PAGE_SIZE).subscribe {
             [weak self]

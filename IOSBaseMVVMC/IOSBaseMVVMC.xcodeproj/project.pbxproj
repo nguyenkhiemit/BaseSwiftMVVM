@@ -60,6 +60,8 @@
 		1899F08B1F891CF300B0D8F6 /* CommonError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1899F08A1F891CF300B0D8F6 /* CommonError.swift */; };
 		1899F08D1F8928BD00B0D8F6 /* HomeTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1899F08C1F8928BD00B0D8F6 /* HomeTableViewCell.xib */; };
 		1899F08F1F89290800B0D8F6 /* HomeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1899F08E1F89290800B0D8F6 /* HomeTableViewCell.swift */; };
+		18EB5C4D1F8CDE13001FB712 /* DesignableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18EB5C4C1F8CDE13001FB712 /* DesignableView.swift */; };
+		18EB5C4F1F8CDFF0001FB712 /* DesignableButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18EB5C4E1F8CDFF0001FB712 /* DesignableButton.swift */; };
 		4084251B5739CCF2206A4972 /* Pods_IOSBaseMVVMC.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1088978D200D9D871D5A3D29 /* Pods_IOSBaseMVVMC.framework */; };
 		9ED90984C305A9E323A46FD2 /* Pods_IOSBaseMVVMCTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DCEFA01BDD823A237EEC737A /* Pods_IOSBaseMVVMCTests.framework */; };
 		D24EDB901F83E8A30065FFF0 /* UserDefaultsUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = D24EDB8F1F83E8A30065FFF0 /* UserDefaultsUtils.swift */; };
@@ -147,6 +149,8 @@
 		1899F08A1F891CF300B0D8F6 /* CommonError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommonError.swift; sourceTree = "<group>"; };
 		1899F08C1F8928BD00B0D8F6 /* HomeTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HomeTableViewCell.xib; sourceTree = "<group>"; };
 		1899F08E1F89290800B0D8F6 /* HomeTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeTableViewCell.swift; sourceTree = "<group>"; };
+		18EB5C4C1F8CDE13001FB712 /* DesignableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DesignableView.swift; sourceTree = "<group>"; };
+		18EB5C4E1F8CDFF0001FB712 /* DesignableButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DesignableButton.swift; sourceTree = "<group>"; };
 		1BAF6B3576D8223EE8824646 /* Pods-IOSBaseMVVMCTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-IOSBaseMVVMCTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-IOSBaseMVVMCTests/Pods-IOSBaseMVVMCTests.release.xcconfig"; sourceTree = "<group>"; };
 		4093C415BF8373EE99E44E9F /* Pods-IOSBaseMVVMC.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-IOSBaseMVVMC.release.xcconfig"; path = "Pods/Target Support Files/Pods-IOSBaseMVVMC/Pods-IOSBaseMVVMC.release.xcconfig"; sourceTree = "<group>"; };
 		47597B425742D960DB386E10 /* Pods-IOSBaseMVVMCUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-IOSBaseMVVMCUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-IOSBaseMVVMCUITests/Pods-IOSBaseMVVMCUITests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -475,6 +479,7 @@
 		1883C65C1F7F5B340015367F /* View */ = {
 			isa = PBXGroup;
 			children = (
+				18EB5C491F8CDDAC001FB712 /* CustomView */,
 				1883C65D1F7F5B4D0015367F /* BaseViewController.swift */,
 			);
 			path = View;
@@ -497,6 +502,15 @@
 				1899F08A1F891CF300B0D8F6 /* CommonError.swift */,
 			);
 			path = Networking;
+			sourceTree = "<group>";
+		};
+		18EB5C491F8CDDAC001FB712 /* CustomView */ = {
+			isa = PBXGroup;
+			children = (
+				18EB5C4C1F8CDE13001FB712 /* DesignableView.swift */,
+				18EB5C4E1F8CDFF0001FB712 /* DesignableButton.swift */,
+			);
+			path = CustomView;
 			sourceTree = "<group>";
 		};
 		5A1CFE1F542A92F147D4DE21 /* Frameworks */ = {
@@ -836,6 +850,7 @@
 				180BC0651F8094E4008E4A62 /* RegisterViewController.swift in Sources */,
 				18470E221F84C1D3006AD3AA /* Account.swift in Sources */,
 				1899F07E1F890C5500B0D8F6 /* BookingResponse.swift in Sources */,
+				18EB5C4F1F8CDFF0001FB712 /* DesignableButton.swift in Sources */,
 				1883C65B1F7F4F710015367F /* MenuViewModel.swift in Sources */,
 				180BC0711F80964F008E4A62 /* HomeCoordinator.swift in Sources */,
 				1812DEEE1F7E5351004F9286 /* AppCoordinator.swift in Sources */,
@@ -864,6 +879,7 @@
 				181E27B41F87267F00682404 /* AuthenticationRequestManager.swift in Sources */,
 				180BC06F1F809642008E4A62 /* HomeViewModel.swift in Sources */,
 				1899F07C1F890C4500B0D8F6 /* BookingRequest.swift in Sources */,
+				18EB5C4D1F8CDE13001FB712 /* DesignableView.swift in Sources */,
 				184040A41F8389D0008D3227 /* LoginResponse.swift in Sources */,
 				1812DEDD1F7E404E004F9286 /* Constant.swift in Sources */,
 				18470E1E1F84C1A7006AD3AA /* AccountRequest.swift in Sources */,
