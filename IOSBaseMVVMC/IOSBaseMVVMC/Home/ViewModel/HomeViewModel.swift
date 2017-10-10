@@ -27,6 +27,13 @@ class HomeViewModel {
         delegate?.openNewScreen(index: index)
     }
     
+    func loadListData(page: Int, pageSize: Int) -> Observable<[Booking]> {
+        var bookingRequest: BookingRequest = BookingRequest()
+        bookingRequest.page = page
+        bookingRequest.pageSize = pageSize
+        return requestManager.getListData(bookingRequest: bookingRequest)
+    }
+    
     func loadListBooking(page: Int, pageSize: Int) -> Driver<Result<[Booking]>> {
         var bookingRequest: BookingRequest = BookingRequest()
         bookingRequest.page = page
