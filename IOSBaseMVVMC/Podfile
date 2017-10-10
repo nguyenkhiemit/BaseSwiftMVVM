@@ -21,6 +21,7 @@ target 'IOSBaseMVVMC' do
   pod 'Alamofire'
   pod 'RxSwift'
   pod 'RxCocoa'
+  pod 'RxDataSources'
   pod 'SwiftEventBus'
   pod 'RxAlamofire'
   pod 'SwiftyJSON'

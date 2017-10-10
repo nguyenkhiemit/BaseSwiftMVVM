@@ -9,6 +9,7 @@
 import UIKit
 import RxSwift
 import RxCocoa
+import RxDataSources
 import SwiftEventBus
 import SlideMenuControllerSwift
 import ICSPullToRefresh
@@ -68,22 +69,25 @@ class HomeViewController: UIViewController {
 }
 
 extension HomeViewController {
+    
+    //can't load more with drive
+    //error Maybe delegate was already set in `xib` or `storyboard` and now it's being overwritten in code.
     fileprivate func bindData(page: Int) {
         viewModel?.loadListBooking(page: page, pageSize: PAGE_SIZE)
         .map {
+            [weak self]
             result -> [Booking] in
-            if(self.tableView.showsPullToRefresh) {
-                self.tableView.pullToRefreshView?.stopAnimating()
+            if(self?.tableView?.showsPullToRefresh)! {
+                self?.tableView.pullToRefreshView?.stopAnimating()
             }
-            if(self.tableView.showsInfiniteScrolling) {
-                self.tableView.infiniteScrollingView?.stopAnimating()
+            if(self?.tableView.showsInfiniteScrolling)! {
+                self?.tableView.infiniteScrollingView?.stopAnimating()
             }
             switch result {
             case .success(let bookings):
-                print("X Bind data to table view !!!")
-                self.currentPage += 1
-                self.arrayBooking.append(contentsOf: bookings)
-                return self.arrayBooking
+                self?.currentPage += 1
+                self?.arrayBooking.append(contentsOf: bookings)
+                return (self?.arrayBooking)!
             case .failure(let error):
                 print(error.localizedDescription)
                 return []

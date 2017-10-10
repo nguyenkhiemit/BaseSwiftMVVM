@@ -31,7 +31,6 @@ class HomeViewModel {
         var bookingRequest: BookingRequest = BookingRequest()
         bookingRequest.page = page
         bookingRequest.pageSize = pageSize
-        print("Thread.isMainThread A = \(Thread.isMainThread)")
         return requestManager.getListBooking(bookingRequest: bookingRequest)
     }
 }

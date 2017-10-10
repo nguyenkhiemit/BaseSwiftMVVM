@@ -10,6 +10,9 @@ PODS:
     - RxSwift (~> 3.0)
   - RxCocoa (3.3.1):
     - RxSwift (~> 3.3)
+  - RxDataSources (1.0.3):
+    - RxCocoa (~> 3.0)
+    - RxSwift (~> 3.0)
   - RxSwift (3.3.1)
   - SlideMenuControllerSwift (3.0.1)
   - SwiftEventBus (2.1.2)
@@ -22,6 +25,7 @@ DEPENDENCIES:
   - ObjectMapper
   - RxAlamofire
   - RxCocoa
+  - RxDataSources
   - RxSwift
   - SlideMenuControllerSwift
   - SwiftEventBus
@@ -34,11 +38,12 @@ SPEC CHECKSUMS:
   ObjectMapper: 042708195cc46c20871cbcbec0453826398273fd
   RxAlamofire: bc53604b29fd2d220cfaa490c736cc4500819f34
   RxCocoa: 7dcb7a1860fc9cd0e23dae67ab105fc2916670b6
+  RxDataSources: a021a0e944ba5f7991259829d973afdbfa719c0b
   RxSwift: 8fc9f2de6275a9101d518444e00bf32f1a42caac
   SlideMenuControllerSwift: 9a163b16d54afab734add42858cba7ef7c307755
   SwiftEventBus: 9e8f6d8cff2826d66536ec367d17a47299478aa0
   SwiftyJSON: c2842d878f95482ffceec5709abc3d05680c0220
 
-PODFILE CHECKSUM: 18179c5176368b3d463aa211142935e39242d7c0
+PODFILE CHECKSUM: 2073f9bee4ebedaea7465d0e1ad4767dac2a9229
 
 COCOAPODS: 1.2.1
