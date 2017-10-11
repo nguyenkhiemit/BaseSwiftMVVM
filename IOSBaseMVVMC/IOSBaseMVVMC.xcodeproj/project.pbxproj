@@ -35,8 +35,7 @@
 		184040A21F8389B2008D3227 /* LoginRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 184040A11F8389B1008D3227 /* LoginRequest.swift */; };
 		184040A41F8389D0008D3227 /* LoginResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 184040A31F8389D0008D3227 /* LoginResponse.swift */; };
 		184040A71F838B2C008D3227 /* AuthentConstant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 184040A61F838B2C008D3227 /* AuthentConstant.swift */; };
-		184317B11F8E27B0009307EC /* Loading.xib in Resources */ = {isa = PBXBuildFile; fileRef = 184317B01F8E27B0009307EC /* Loading.xib */; };
-		184317B31F8E2A46009307EC /* Loading.swift in Sources */ = {isa = PBXBuildFile; fileRef = 184317B21F8E2A46009307EC /* Loading.swift */; };
+		184317B31F8E2A46009307EC /* UILoading.swift in Sources */ = {isa = PBXBuildFile; fileRef = 184317B21F8E2A46009307EC /* UILoading.swift */; };
 		18470E1A1F84C184006AD3AA /* RegisterRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18470E191F84C184006AD3AA /* RegisterRequest.swift */; };
 		18470E1C1F84C191006AD3AA /* RegisterResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18470E1B1F84C191006AD3AA /* RegisterResponse.swift */; };
 		18470E1E1F84C1A7006AD3AA /* AccountRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18470E1D1F84C1A7006AD3AA /* AccountRequest.swift */; };
@@ -70,6 +69,7 @@
 		D258842D1F8D8835000B2051 /* DesignableTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = D258842C1F8D8835000B2051 /* DesignableTextField.swift */; };
 		D27A94141F85A8070036E7E1 /* BaseResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = D27A94131F85A8070036E7E1 /* BaseResponse.swift */; };
 		D2F1CF611F86691C0096386F /* StringExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2F1CF601F86691C0096386F /* StringExtension.swift */; };
+		D2F299541F8E68B00010C1F5 /* UILoading.xib in Resources */ = {isa = PBXBuildFile; fileRef = D2F299531F8E68B00010C1F5 /* UILoading.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -124,8 +124,7 @@
 		184040A11F8389B1008D3227 /* LoginRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginRequest.swift; sourceTree = "<group>"; };
 		184040A31F8389D0008D3227 /* LoginResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginResponse.swift; sourceTree = "<group>"; };
 		184040A61F838B2C008D3227 /* AuthentConstant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthentConstant.swift; sourceTree = "<group>"; };
-		184317B01F8E27B0009307EC /* Loading.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = Loading.xib; sourceTree = "<group>"; };
-		184317B21F8E2A46009307EC /* Loading.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Loading.swift; sourceTree = "<group>"; };
+		184317B21F8E2A46009307EC /* UILoading.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UILoading.swift; sourceTree = "<group>"; };
 		18470E191F84C184006AD3AA /* RegisterRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterRequest.swift; sourceTree = "<group>"; };
 		18470E1B1F84C191006AD3AA /* RegisterResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterResponse.swift; sourceTree = "<group>"; };
 		18470E1D1F84C1A7006AD3AA /* AccountRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountRequest.swift; sourceTree = "<group>"; };
@@ -167,6 +166,7 @@
 		D27A94111F85A7D50036E7E1 /* ViewExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewExtension.swift; sourceTree = "<group>"; };
 		D27A94131F85A8070036E7E1 /* BaseResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseResponse.swift; sourceTree = "<group>"; };
 		D2F1CF601F86691C0096386F /* StringExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringExtension.swift; sourceTree = "<group>"; };
+		D2F299531F8E68B00010C1F5 /* UILoading.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = UILoading.xib; sourceTree = "<group>"; };
 		DCEFA01BDD823A237EEC737A /* Pods_IOSBaseMVVMCTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_IOSBaseMVVMCTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E14194D44377ECBE1EF013A4 /* Pods-IOSBaseMVVMCTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-IOSBaseMVVMCTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-IOSBaseMVVMCTests/Pods-IOSBaseMVVMCTests.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -516,8 +516,8 @@
 				18EB5C4C1F8CDE13001FB712 /* DesignableView.swift */,
 				18EB5C4E1F8CDFF0001FB712 /* DesignableButton.swift */,
 				D258842C1F8D8835000B2051 /* DesignableTextField.swift */,
-				184317B01F8E27B0009307EC /* Loading.xib */,
-				184317B21F8E2A46009307EC /* Loading.swift */,
+				184317B21F8E2A46009307EC /* UILoading.swift */,
+				D2F299531F8E68B00010C1F5 /* UILoading.xib */,
 			);
 			path = CustomView;
 			sourceTree = "<group>";
@@ -681,9 +681,9 @@
 			files = (
 				1899F08D1F8928BD00B0D8F6 /* HomeTableViewCell.xib in Resources */,
 				1803EB211F7E932A00A99D8B /* .gitignore in Resources */,
+				D2F299541F8E68B00010C1F5 /* UILoading.xib in Resources */,
 				1812DEB51F7E3F93004F9286 /* LaunchScreen.storyboard in Resources */,
 				180BC04B1F7FC813008E4A62 /* Menu.storyboard in Resources */,
-				184317B11F8E27B0009307EC /* Loading.xib in Resources */,
 				1883C64C1F7F37E00015367F /* Localizable.strings in Resources */,
 				1883C6361F7F36480015367F /* Home.storyboard in Resources */,
 				1812DEB21F7E3F93004F9286 /* Assets.xcassets in Resources */,
@@ -862,7 +862,7 @@
 				1899F07E1F890C5500B0D8F6 /* BookingResponse.swift in Sources */,
 				18EB5C4F1F8CDFF0001FB712 /* DesignableButton.swift in Sources */,
 				1883C65B1F7F4F710015367F /* MenuViewModel.swift in Sources */,
-				184317B31F8E2A46009307EC /* Loading.swift in Sources */,
+				184317B31F8E2A46009307EC /* UILoading.swift in Sources */,
 				180BC0711F80964F008E4A62 /* HomeCoordinator.swift in Sources */,
 				1812DEEE1F7E5351004F9286 /* AppCoordinator.swift in Sources */,
 				1899F0851F8912FB00B0D8F6 /* Provider.swift in Sources */,

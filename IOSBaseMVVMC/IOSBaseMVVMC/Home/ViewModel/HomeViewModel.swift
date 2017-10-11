@@ -28,6 +28,7 @@ class HomeViewModel {
     }
     
     func loadListData(page: Int, pageSize: Int) -> Observable<[Booking]> {
+        UILoading.show()
         var bookingRequest: BookingRequest = BookingRequest()
         bookingRequest.page = page
         bookingRequest.pageSize = pageSize

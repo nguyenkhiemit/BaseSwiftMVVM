@@ -95,6 +95,7 @@ extension HomeViewController {
             if(self?.tableView.showsInfiniteScrolling)! {
                 self?.tableView.infiniteScrollingView?.stopAnimating()
             }
+            UILoading.dismiss()
         }
     }
         
