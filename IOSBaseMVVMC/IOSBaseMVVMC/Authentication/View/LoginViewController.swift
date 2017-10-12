@@ -9,6 +9,7 @@
 import UIKit
 import RxSwift
 import RxCocoa
+import SwiftEventBus
 
 class LoginViewController: UIViewController {
     
@@ -75,7 +76,22 @@ class LoginViewController: UIViewController {
         .debounce(0.5, scheduler: MainScheduler.instance)
         .subscribe(onNext: {
             [weak self] _ in
-            self?.viewModel?.login()
+            LoadingUtils.show()
+            self?.viewModel?.login().subscribe (
+                onNext: { data in
+                    self?.viewModel?.back()
+                    print("=======> bus login")
+                    SwiftEventBus.post("login")
+                    LoadingUtils.close()
+                },
+                onError: { error in
+                    print(error)
+                    LoadingUtils.close()
+                },
+                onCompleted: {
+                    print("Completed")
+                }
+            ).addDisposableTo(self!.disposeBag)
         }).disposed(by: disposeBag)
     }
     

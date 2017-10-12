@@ -9,6 +9,7 @@
 import UIKit
 import RxSwift
 import RxCocoa
+import SwiftEventBus
 
 class RegisterViewController: UIViewController {
     
@@ -64,7 +65,20 @@ class RegisterViewController: UIViewController {
         .debounce(0.5, scheduler: MainScheduler.instance)
         .subscribe({
             [weak self] _ in
-            self?.viewModel?.register()
+            self?.viewModel?.register().subscribe (
+                onNext: { data in
+                    self?.viewModel?.back()
+                    SwiftEventBus.post("register")
+                    LoadingUtils.close()
+                },
+                onError: { error in
+                    print(error)
+                    LoadingUtils.close()
+                },
+                onCompleted: {
+                    print("Completed")
+                }
+                ).addDisposableTo(self!.disposeBag)
         }).disposed(by: disposeBag)
     }
     

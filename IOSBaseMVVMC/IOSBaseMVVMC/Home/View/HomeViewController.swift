@@ -61,8 +61,8 @@ class HomeViewController: UIViewController {
             self.loadData(page: self.currentPage)
         }
     }
-
-    override func viewDidDisappear(_ animated: Bool) {
+    
+    deinit {
         SwiftEventBus.unregister(self)
     }
     
@@ -81,6 +81,9 @@ extension HomeViewController {
             event in
             switch event {
             case .next(let bookings):
+                if page == 1 {
+                    self?.arrayBooking.removeAll()
+                }
                 self?.currentPage += 1
                 self?.arrayBooking.append(contentsOf: bookings)
                 self?.tableView.reloadData()

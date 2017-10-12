@@ -35,28 +35,25 @@ class RegisterViewModel {
         delegate?.back()
     }
     
-    func register() {
+    func register() -> Observable<AccountResponse> {
         let username = usernameVariable.value
         let password = passwordVariable.value
         if username.validateEmail() != "" {
             validateEmailVariable.value = username.validateEmail()
-            return
+            return Observable.empty()
         } else {
             validateEmailVariable.value = ""
         }
         if password.validatePassword() != "" {
             validatePasswordVariable.value = password.validatePassword()
-            return
+            return Observable.empty()
         } else {
             validatePasswordVariable.value = ""
         }
         var registerRequest = RegisterRequest()
         registerRequest.username = username
         registerRequest.password = password
-        requestManager.register(registerRequest: registerRequest).subscribe {
-            response in
-            
-        }
+        return requestManager.register(registerRequest: registerRequest)
     }
     
 }

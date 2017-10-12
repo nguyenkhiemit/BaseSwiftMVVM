@@ -35,28 +35,25 @@ class LoginViewModel {
         delegate?.openRegisterScreen()
     }
     
-    func login() {
+    func login() -> Observable<AccountResponse> {
         let username = self.usernameVariable.value
         let password = self.passwordVariable.value
         if username.validateEmail() != "" {
             validateEmailVariable.value = username.validateEmail()
-            return
+            return Observable.empty()
         } else {
             validateEmailVariable.value = ""
         }
         if password.validatePassword() != "" {
             validatePasswordVariable.value = password.validatePassword()
-            return
+            return Observable.empty()
         } else {
             validatePasswordVariable.value = ""
         }
         var loginRequest = LoginRequest()
         loginRequest.username = username
         loginRequest.password = password
-        requestManager.login(loginRequest: loginRequest).subscribe {
-            response in
-            print("login response = \(response.element?.email!)")
-        }.disposed(by: disposeBag)
+        return requestManager.login(loginRequest: loginRequest)
     }
     
     func back() {
