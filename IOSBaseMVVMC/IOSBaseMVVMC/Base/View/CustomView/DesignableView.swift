@@ -18,6 +18,4 @@ class DesignableView: UIView {
             }
         }
     }
-    
-    
 }

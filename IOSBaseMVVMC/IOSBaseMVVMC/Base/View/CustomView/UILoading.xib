@@ -16,24 +16,28 @@
             <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Af5-JR-g5H" customClass="DesignableView" customModule="IOSBaseMVVMC" customModuleProvider="target">
-                    <rect key="frame" x="137.5" y="283" width="100" height="100"/>
+                <view alpha="0.5" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="jhR-6u-2U2">
+                    <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                    <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                </view>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bqv-Rf-HWX" customClass="DesignableView" customModule="IOSBaseMVVMC" customModuleProvider="target">
+                    <rect key="frame" x="147" y="293" width="80" height="80"/>
                     <subviews>
-                        <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="Cfc-Sr-TQB">
-                            <rect key="frame" x="39.5" y="40" width="20" height="20"/>
+                        <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="fde-pI-tDq">
+                            <rect key="frame" x="29.5" y="30" width="20" height="20"/>
                             <constraints>
-                                <constraint firstAttribute="width" constant="20" id="dMh-L0-oum"/>
-                                <constraint firstAttribute="height" constant="20" id="rLs-1p-Apz"/>
+                                <constraint firstAttribute="height" constant="20" id="a8S-dq-E5y"/>
+                                <constraint firstAttribute="width" constant="20" id="p2m-RB-RvX"/>
                             </constraints>
                             <color key="color" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                         </activityIndicatorView>
                     </subviews>
-                    <color key="backgroundColor" red="0.40000000600000002" green="0.40000000600000002" blue="0.40000000600000002" alpha="0.77461472602739723" colorSpace="calibratedRGB"/>
+                    <color key="backgroundColor" red="0.098039217289999994" green="0.098039217289999994" blue="0.098039217289999994" alpha="1" colorSpace="calibratedRGB"/>
                     <constraints>
-                        <constraint firstItem="Cfc-Sr-TQB" firstAttribute="centerX" secondItem="Af5-JR-g5H" secondAttribute="centerX" id="aDp-vk-FlA"/>
-                        <constraint firstAttribute="width" constant="100" id="hG3-Yc-4wb"/>
-                        <constraint firstAttribute="height" constant="100" id="iWJ-EX-1TV"/>
-                        <constraint firstItem="Cfc-Sr-TQB" firstAttribute="centerY" secondItem="Af5-JR-g5H" secondAttribute="centerY" id="pX0-bq-AVB"/>
+                        <constraint firstAttribute="width" constant="80" id="2bG-1w-PVk"/>
+                        <constraint firstItem="fde-pI-tDq" firstAttribute="centerX" secondItem="bqv-Rf-HWX" secondAttribute="centerX" id="W5r-qG-lIX"/>
+                        <constraint firstAttribute="height" constant="80" id="cxa-xC-i6Z"/>
+                        <constraint firstItem="fde-pI-tDq" firstAttribute="centerY" secondItem="bqv-Rf-HWX" secondAttribute="centerY" id="oXU-XM-QYn"/>
                     </constraints>
                     <userDefinedRuntimeAttributes>
                         <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
@@ -41,49 +45,14 @@
                         </userDefinedRuntimeAttribute>
                     </userDefinedRuntimeAttributes>
                 </view>
-                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="jhR-6u-2U2">
-                    <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                    <subviews>
-                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bqv-Rf-HWX" customClass="DesignableView" customModule="IOSBaseMVVMC" customModuleProvider="target">
-                            <rect key="frame" x="137" y="283" width="100" height="100"/>
-                            <subviews>
-                                <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="fde-pI-tDq">
-                                    <rect key="frame" x="39.5" y="40" width="20" height="20"/>
-                                    <constraints>
-                                        <constraint firstAttribute="height" constant="20" id="a8S-dq-E5y"/>
-                                        <constraint firstAttribute="width" constant="20" id="p2m-RB-RvX"/>
-                                    </constraints>
-                                    <color key="color" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                </activityIndicatorView>
-                            </subviews>
-                            <color key="backgroundColor" red="0.40000000600000002" green="0.40000000600000002" blue="0.40000000600000002" alpha="0.77461472600000003" colorSpace="calibratedRGB"/>
-                            <constraints>
-                                <constraint firstAttribute="width" constant="100" id="2bG-1w-PVk"/>
-                                <constraint firstItem="fde-pI-tDq" firstAttribute="centerX" secondItem="bqv-Rf-HWX" secondAttribute="centerX" id="W5r-qG-lIX"/>
-                                <constraint firstAttribute="height" constant="100" id="cxa-xC-i6Z"/>
-                                <constraint firstItem="fde-pI-tDq" firstAttribute="centerY" secondItem="bqv-Rf-HWX" secondAttribute="centerY" id="oXU-XM-QYn"/>
-                            </constraints>
-                            <userDefinedRuntimeAttributes>
-                                <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
-                                    <real key="value" value="20"/>
-                                </userDefinedRuntimeAttribute>
-                            </userDefinedRuntimeAttributes>
-                        </view>
-                    </subviews>
-                    <color key="backgroundColor" red="0.49803921579999999" green="0.49803921579999999" blue="0.49803921579999999" alpha="0.40000000000000002" colorSpace="calibratedRGB"/>
-                    <constraints>
-                        <constraint firstItem="bqv-Rf-HWX" firstAttribute="centerX" secondItem="jhR-6u-2U2" secondAttribute="centerX" id="G23-Qh-j2M"/>
-                        <constraint firstItem="bqv-Rf-HWX" firstAttribute="centerY" secondItem="jhR-6u-2U2" secondAttribute="centerY" id="Lsc-VS-P7H"/>
-                    </constraints>
-                </view>
             </subviews>
-            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
             <constraints>
                 <constraint firstItem="jhR-6u-2U2" firstAttribute="bottom" secondItem="vUN-kp-3ea" secondAttribute="bottom" id="0VT-DS-5sV"/>
-                <constraint firstItem="Af5-JR-g5H" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" id="0WH-ra-Rm6"/>
-                <constraint firstItem="Af5-JR-g5H" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="4fx-TG-591"/>
+                <constraint firstItem="bqv-Rf-HWX" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" id="6Xn-ay-H3O"/>
                 <constraint firstItem="jhR-6u-2U2" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="Ccw-tl-tpL"/>
                 <constraint firstItem="jhR-6u-2U2" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="TCY-OM-mbF"/>
+                <constraint firstItem="bqv-Rf-HWX" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="U3Y-L5-x5g"/>
                 <constraint firstItem="jhR-6u-2U2" firstAttribute="trailing" secondItem="vUN-kp-3ea" secondAttribute="trailing" id="ahC-AQ-ZDK"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>

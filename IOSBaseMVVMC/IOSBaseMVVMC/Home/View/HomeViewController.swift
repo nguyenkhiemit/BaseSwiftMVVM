@@ -33,8 +33,8 @@ class HomeViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         bindView()
+        LoadingUtils.show()
         loadData(page: currentPage)
-        //bindData(page: currentPage)
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -95,7 +95,7 @@ extension HomeViewController {
             if(self?.tableView.showsInfiniteScrolling)! {
                 self?.tableView.infiniteScrollingView?.stopAnimating()
             }
-            //UILoading.instance.dismiss()
+            LoadingUtils.close()
         }
     }
         

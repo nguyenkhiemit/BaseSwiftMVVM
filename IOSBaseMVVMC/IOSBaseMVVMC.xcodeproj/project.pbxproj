@@ -41,6 +41,7 @@
 		18470E1E1F84C1A7006AD3AA /* AccountRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18470E1D1F84C1A7006AD3AA /* AccountRequest.swift */; };
 		18470E201F84C1C6006AD3AA /* AccountResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18470E1F1F84C1C6006AD3AA /* AccountResponse.swift */; };
 		18470E221F84C1D3006AD3AA /* Account.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18470E211F84C1D3006AD3AA /* Account.swift */; };
+		1857C4B41F8F058B0098837A /* LoadingUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1857C4B31F8F058B0098837A /* LoadingUtils.swift */; };
 		185F9ED11F88598E007D0E57 /* AuthentValidateUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 185F9ED01F88598E007D0E57 /* AuthentValidateUtils.swift */; };
 		1883C62D1F7F36380015367F /* Authentication.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1883C62C1F7F36380015367F /* Authentication.storyboard */; };
 		1883C6361F7F36480015367F /* Home.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1883C6321F7F36480015367F /* Home.storyboard */; };
@@ -130,6 +131,7 @@
 		18470E1D1F84C1A7006AD3AA /* AccountRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountRequest.swift; sourceTree = "<group>"; };
 		18470E1F1F84C1C6006AD3AA /* AccountResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountResponse.swift; sourceTree = "<group>"; };
 		18470E211F84C1D3006AD3AA /* Account.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Account.swift; sourceTree = "<group>"; };
+		1857C4B31F8F058B0098837A /* LoadingUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingUtils.swift; sourceTree = "<group>"; };
 		185F9ED01F88598E007D0E57 /* AuthentValidateUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthentValidateUtils.swift; sourceTree = "<group>"; };
 		1883C6271F7F33360015367F /* vi */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = vi; path = vi.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
 		1883C62C1F7F36380015367F /* Authentication.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Authentication.storyboard; sourceTree = "<group>"; };
@@ -326,6 +328,7 @@
 				1812DEF61F7E591A004F9286 /* Utils.swift */,
 				1883C6481F7F37030015367F /* LanguageUtils.swift */,
 				D24EDB8F1F83E8A30065FFF0 /* UserDefaultsUtils.swift */,
+				1857C4B31F8F058B0098837A /* LoadingUtils.swift */,
 			);
 			path = Utility;
 			sourceTree = "<group>";
@@ -880,6 +883,7 @@
 				1812DEF71F7E591A004F9286 /* Utils.swift in Sources */,
 				1883C6431F7F36520015367F /* MenuCoordinator.swift in Sources */,
 				18470E1A1F84C184006AD3AA /* RegisterRequest.swift in Sources */,
+				1857C4B41F8F058B0098837A /* LoadingUtils.swift in Sources */,
 				D24EDB901F83E8A30065FFF0 /* UserDefaultsUtils.swift in Sources */,
 				185F9ED11F88598E007D0E57 /* AuthentValidateUtils.swift in Sources */,
 				1899F08F1F89290800B0D8F6 /* HomeTableViewCell.swift in Sources */,
