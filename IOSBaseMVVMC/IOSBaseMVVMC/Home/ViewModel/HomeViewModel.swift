@@ -23,7 +23,7 @@ class HomeViewModel {
         
     }
     
-    func openNewScreen(index: Int) {
+    func openNewScreen(index: MenuIndex) {
         delegate?.openNewScreen(index: index)
     }
     

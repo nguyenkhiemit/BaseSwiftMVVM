@@ -10,7 +10,7 @@ import Foundation
 import UIKit
 
 protocol HomeCoordinatorDelegate: class {
-    func openNewScreen(index: Int)
+    func openNewScreen(index: MenuIndex)
 }
 
 final class HomeCoordinator: BaseCoordinator {
@@ -26,8 +26,10 @@ final class HomeCoordinator: BaseCoordinator {
 }
 
 extension HomeCoordinator: HomeCoordinatorDelegate {
-    func openNewScreen(index: Int) {
-        let loginCoordinator = LoginCoordinator(navigationController: navigationController)
-        loginCoordinator.start()
+    func openNewScreen(index: MenuIndex) {
+        if MenuIndex.POS_LOGIN == index {
+            let loginCoordinator = LoginCoordinator(navigationController: navigationController)
+            loginCoordinator.start()
+        } 
     }
 }

@@ -40,13 +40,13 @@ class LoginViewModel {
         let password = self.passwordVariable.value
         if username.validateEmail() != "" {
             validateEmailVariable.value = username.validateEmail()
-            return Observable.empty()
+            return Observable.error(CommonError.parsingError)
         } else {
             validateEmailVariable.value = ""
         }
         if password.validatePassword() != "" {
             validatePasswordVariable.value = password.validatePassword()
-            return Observable.empty()
+            return Observable.error(CommonError.parsingError)
         } else {
             validatePasswordVariable.value = ""
         }

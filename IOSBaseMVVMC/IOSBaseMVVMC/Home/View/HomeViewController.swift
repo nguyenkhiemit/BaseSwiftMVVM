@@ -35,11 +35,14 @@ class HomeViewController: UIViewController {
         bindView()
         LoadingUtils.show()
         loadData(page: currentPage)
-    }
-    
-    override func viewDidAppear(_ animated: Bool) {
+        
         SwiftEventBus.onMainThread(self, name: "index") { (notification) in
-            self.viewModel?.openNewScreen(index: notification.object as! Int)
+            let index = notification.object as! MenuIndex
+            if index == MenuIndex.POS_LANGUAGE {
+                self.showChangeLanguageDialog()
+            } else {
+                self.viewModel?.openNewScreen(index: index)
+            }
         }
     }
     
@@ -130,6 +133,12 @@ extension HomeViewController {
             cell.bindData(booking: booking)
         }
         .addDisposableTo(disposeBag)
+    }
+}
+
+extension HomeViewController {
+    func showChangeLanguageDialog() {
+        ChangeLanguageUtils.show()
     }
 }
 

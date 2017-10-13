@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13196" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13173"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="UIChangeLanguageView" customModule="IOSBaseMVVMC" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="i1L-W9-bIj">
+                    <rect key="frame" x="0.0" y="20" width="375" height="647"/>
+                    <color key="backgroundColor" red="0.50196081400000003" green="0.50196081400000003" blue="0.50196081400000003" alpha="0.29999999999999999" colorSpace="calibratedRGB"/>
+                </view>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="MK5-Ci-bYO" customClass="DesignableView" customModule="IOSBaseMVVMC" customModuleProvider="target">
+                    <rect key="frame" x="32" y="262" width="311" height="142"/>
+                    <subviews>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Select language" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Vuw-PQ-Tnn">
+                            <rect key="frame" x="8" y="0.0" width="295" height="50"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="50" id="8Hj-pT-ykn"/>
+                            </constraints>
+                            <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                            <color key="textColor" red="0.50196081400000003" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="CaE-23-O4X">
+                            <rect key="frame" x="8" y="50" width="295" height="1"/>
+                            <color key="backgroundColor" red="0.60000002379999995" green="0.60000002379999995" blue="0.60000002379999995" alpha="1" colorSpace="calibratedRGB"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="1" id="iAy-YP-TXe"/>
+                            </constraints>
+                        </view>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="quR-cK-SVy">
+                            <rect key="frame" x="8" y="91" width="295" height="1"/>
+                            <color key="backgroundColor" red="0.60000002379999995" green="0.60000002379999995" blue="0.60000002379999995" alpha="1" colorSpace="calibratedRGB"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="1" id="WU0-yq-MMv"/>
+                            </constraints>
+                        </view>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Pys-SA-4cg">
+                            <rect key="frame" x="8" y="51" width="295" height="40"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="40" id="qBI-CL-nbD"/>
+                            </constraints>
+                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                            <state key="normal" title="English">
+                                <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                            </state>
+                        </button>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4Qx-rE-QKy">
+                            <rect key="frame" x="8" y="92" width="295" height="40"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="40" id="8Uz-OG-cm7"/>
+                            </constraints>
+                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                            <state key="normal" title="Vietnamese">
+                                <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                            </state>
+                        </button>
+                    </subviews>
+                    <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                    <constraints>
+                        <constraint firstItem="CaE-23-O4X" firstAttribute="trailing" secondItem="MK5-Ci-bYO" secondAttribute="trailingMargin" id="7kI-wt-qze"/>
+                        <constraint firstAttribute="height" constant="142" id="DV1-Z3-Y33"/>
+                        <constraint firstAttribute="width" constant="311" id="G4D-yv-yhn"/>
+                        <constraint firstItem="CaE-23-O4X" firstAttribute="leading" secondItem="quR-cK-SVy" secondAttribute="leading" id="H4B-l6-Nd5"/>
+                        <constraint firstItem="CaE-23-O4X" firstAttribute="trailing" secondItem="Vuw-PQ-Tnn" secondAttribute="trailing" id="Hct-wR-Tby"/>
+                        <constraint firstItem="Pys-SA-4cg" firstAttribute="top" secondItem="CaE-23-O4X" secondAttribute="bottom" id="JQF-Ho-592"/>
+                        <constraint firstItem="quR-cK-SVy" firstAttribute="top" secondItem="Pys-SA-4cg" secondAttribute="bottom" id="NbB-he-EdN"/>
+                        <constraint firstItem="CaE-23-O4X" firstAttribute="leading" secondItem="Vuw-PQ-Tnn" secondAttribute="leading" id="PRH-LY-Qgg"/>
+                        <constraint firstItem="CaE-23-O4X" firstAttribute="top" secondItem="Vuw-PQ-Tnn" secondAttribute="bottom" id="RDs-0m-NQN"/>
+                        <constraint firstItem="CaE-23-O4X" firstAttribute="trailing" secondItem="Pys-SA-4cg" secondAttribute="trailing" id="Vdd-LG-Xju"/>
+                        <constraint firstItem="CaE-23-O4X" firstAttribute="leading" secondItem="Pys-SA-4cg" secondAttribute="leading" id="box-D8-CS5"/>
+                        <constraint firstItem="CaE-23-O4X" firstAttribute="leading" secondItem="4Qx-rE-QKy" secondAttribute="leading" id="cKZ-SA-UMA"/>
+                        <constraint firstItem="CaE-23-O4X" firstAttribute="top" secondItem="MK5-Ci-bYO" secondAttribute="top" constant="50" id="foo-to-dy7"/>
+                        <constraint firstItem="CaE-23-O4X" firstAttribute="trailing" secondItem="4Qx-rE-QKy" secondAttribute="trailing" id="lyJ-TG-j49"/>
+                        <constraint firstItem="CaE-23-O4X" firstAttribute="trailing" secondItem="quR-cK-SVy" secondAttribute="trailing" id="oAf-Hj-Ahu"/>
+                        <constraint firstItem="CaE-23-O4X" firstAttribute="leading" secondItem="MK5-Ci-bYO" secondAttribute="leadingMargin" id="pf8-sM-49m"/>
+                        <constraint firstItem="4Qx-rE-QKy" firstAttribute="top" secondItem="quR-cK-SVy" secondAttribute="bottom" id="vSW-UL-RmA"/>
+                    </constraints>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                            <real key="value" value="20"/>
+                        </userDefinedRuntimeAttribute>
+                    </userDefinedRuntimeAttributes>
+                </view>
+            </subviews>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="MK5-Ci-bYO" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" id="EXF-Ns-UUD"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="i1L-W9-bIj" secondAttribute="trailing" id="Ogg-lH-ZuU"/>
+                <constraint firstItem="i1L-W9-bIj" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" id="Q85-BL-ZdU"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="bottom" secondItem="i1L-W9-bIj" secondAttribute="bottom" id="Yni-Zh-rf0"/>
+                <constraint firstItem="i1L-W9-bIj" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="bDf-HC-UsO"/>
+                <constraint firstItem="MK5-Ci-bYO" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="fen-I2-Fy5"/>
+            </constraints>
+            <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
+            <connections>
+                <outlet property="englishButton" destination="Pys-SA-4cg" id="n5b-Nk-8hg"/>
+                <outlet property="vietnameseButton" destination="4Qx-rE-QKy" id="yEj-8p-HUE"/>
+            </connections>
+            <point key="canvasLocation" x="7.5" y="329.5"/>
+        </view>
+    </objects>
+</document>
