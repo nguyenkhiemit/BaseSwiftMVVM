@@ -30,6 +30,9 @@ extension HomeCoordinator: HomeCoordinatorDelegate {
         if MenuIndex.POS_LOGIN == index {
             let loginCoordinator = LoginCoordinator(navigationController: navigationController)
             loginCoordinator.start()
-        } 
+        } else if MenuIndex.POS_TAB_LAYOUT == index {
+            let tabLayoutCoordinator = TabLayoutCoordinator(navigationController: navigationController)
+            tabLayoutCoordinator.start()
+        }
     }
 }

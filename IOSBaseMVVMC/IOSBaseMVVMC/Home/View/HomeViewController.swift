@@ -84,6 +84,7 @@ extension HomeViewController {
             event in
             switch event {
             case .next(let bookings):
+                EmptyTextUtils.hidden(view: self!.tableView)
                 if page == 1 {
                     self?.arrayBooking.removeAll()
                 }
@@ -91,7 +92,11 @@ extension HomeViewController {
                 self?.arrayBooking.append(contentsOf: bookings)
                 self?.tableView.reloadData()
             case .error(let error):
-                print("\(error)")
+                if let error = error as? CommonError {
+                }
+                if(self?.arrayBooking.count == 0) {
+                    EmptyTextUtils.show(view: self!.tableView)
+                }
             case .completed:
                 print("Complete!")
             }

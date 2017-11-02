@@ -29,8 +29,8 @@ extension MenuViewModel {
         menus.value.append(Menu(index: MenuIndex.POS_LOGIN_TITLE, text: "Title Login".localized(), type: MenuType.TITLE))
         menus.value.append(Menu(index: MenuIndex.POS_LOGIN, text: "Login".localized(), type: MenuType.MENU))
         menus.value.append(Menu(index: MenuIndex.POS_LANGUAGE, text: "Language".localized(), type: MenuType.MENU))
-        menus.value.append(Menu(index: MenuIndex.POS_ABOUT_TITLE, text: "Title About Me".localized(), type: MenuType.TITLE))
-        menus.value.append(Menu(index: MenuIndex.POS_ABOUT, text: "About Me".localized(), type: MenuType.MENU))
+        menus.value.append(Menu(index: MenuIndex.POS_ABOUT_TITLE, text: "Title TabLayout".localized(), type: MenuType.TITLE))
+        menus.value.append(Menu(index: MenuIndex.POS_TAB_LAYOUT, text: "About TabLayout".localized(), type: MenuType.MENU))
         return menus
     }
 

@@ -8,7 +8,7 @@
 
 import Foundation
 
-let BASE_URL = "https://services.vntrip.vn/vntrip/"
+let BASE_URL = "https://test-services.vntrip.vn/vntrip/"
 let BASE_IMAGE_URL = "https://statics.vntrip.vn/data-v2/img_origin/"
 
 let kClientId = "16GuKzV8K1@92YcLg85uR5ku;peVriRZSn!1.UTh"

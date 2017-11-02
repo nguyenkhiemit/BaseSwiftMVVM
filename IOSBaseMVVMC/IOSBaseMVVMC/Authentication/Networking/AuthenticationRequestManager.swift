@@ -56,7 +56,7 @@ class AuthenticationRequestManager {
                 return Observable.error(CommonError.parsingError)
             }
             UserDefaultUtils.instance.save(key: UserDefaultsKey.authTokenType, value: "Bearer")
-            UserDefaultUtils.instance.save(key: UserDefaultsKey.authAccessToken, value: "e45OtqScpAjGZaM5mBMNodVT6M7lfR")
+            UserDefaultUtils.instance.save(key: UserDefaultsKey.authAccessToken, value: "oa9tfonPb2XhN4kqwT9uMxuWViDjGa")
             return Observable.just(loginResponse)
         }
     }

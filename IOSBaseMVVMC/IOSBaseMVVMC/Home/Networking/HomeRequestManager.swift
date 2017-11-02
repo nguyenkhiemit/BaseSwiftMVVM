@@ -43,7 +43,7 @@ class HomeRequestManager {
                 }
                 return Observable.just(arrayBooking)
             } else {
-                return Observable.error(CommonError.parsingError)
+                return Observable.error(CommonError.networkError)
             }
         }
     }

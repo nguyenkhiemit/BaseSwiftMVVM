@@ -5,7 +5,7 @@
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13173"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13174"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -229,7 +229,7 @@
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ic_back" highlightedImage="ic_menu" translatesAutoresizingMaskIntoConstraints="NO" id="rZX-zl-TZm">
+                                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ic_back" highlightedImage="ic_back" translatesAutoresizingMaskIntoConstraints="NO" id="rZX-zl-TZm">
                                                 <rect key="frame" x="16" y="16" width="20" height="17"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="17" id="Jw0-jA-pfh"/>

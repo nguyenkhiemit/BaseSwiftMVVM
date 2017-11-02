@@ -29,7 +29,6 @@ class LoginCoordinator: BaseCoordinator {
 
 extension LoginCoordinator: LoginCoordinatorDelegate {
     func openRegisterScreen() {
-         print("LoginCoordinator openRegisterScreen")
         let registerCoordinator = RegisterCoordinator(navigationController: navigationController)
         registerCoordinator.start()
     }
