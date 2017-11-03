@@ -47,7 +47,10 @@ class AuthenticationRequestManager {
             "client_secret": CLIENT_SECRET,
             "grant_type": GRANT_PASS_TYPE
         ]
-        return provider.requestAPIJSON(api: ClientApi.login, parameters: param).flatMap {
+        let encoding: ParameterEncoding = URLEncoding.httpBody
+        var headers = [String: String]()
+        headers["Content-Type"] = "application/x-www-form-urlencoded"
+        return provider.requestAPIJSON(api: ClientApi.login, parameters: param, encoding: encoding, headers: headers).flatMap {
             response, json -> Observable<LoginResponse> in
             guard let json = json as? [String: Any] else {
                 return Observable.error(CommonError.parsingError)
@@ -56,7 +59,8 @@ class AuthenticationRequestManager {
                 return Observable.error(CommonError.parsingError)
             }
             UserDefaultUtils.instance.save(key: UserDefaultsKey.authTokenType, value: "Bearer")
-            UserDefaultUtils.instance.save(key: UserDefaultsKey.authAccessToken, value: "oa9tfonPb2XhN4kqwT9uMxuWViDjGa")
+            print("loginResponse.accessToken 1 =====>\(loginResponse.accessToken)")
+            UserDefaultUtils.instance.save(key: UserDefaultsKey.authAccessToken, value: loginResponse.accessToken)
             return Observable.just(loginResponse)
         }
     }

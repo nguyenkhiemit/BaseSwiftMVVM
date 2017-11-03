@@ -22,6 +22,7 @@ class Provider {
         var headers = [String: String]()
         headers["Content-Type"] = "application/json; charset=UTF-8"
         if let accessToken = UserDefaultUtils.instance.getAccessTokenWithValidate() {
+            print("loginResponse.accessToken 2 =====>\(accessToken)")
             headers["Authorization"] = accessToken
         }
         return headers
@@ -76,7 +77,7 @@ extension Provider {
         print("url = \(url)")
         print("parameters = \(parameters ?? [:])")
         print("headers = \(finalHeaders)")
-        print("Thread.isMainThread E = \(Thread.isMainThread)")
+        
         return requestJSON(api.method, url, parameters: parameters, encoding: finalEncoding, headers: finalHeaders)
         .debug()
         .timeout(networkTimeout, scheduler: backgroundScheduler)
