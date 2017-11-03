@@ -36,7 +36,7 @@ _ If tableview have multiple type, you use:
         }.disposed(by: disposeBag)
       }
 
-2) About problem navigationController: 
-when you want open new controller, you must use navigationController in Coordinator class
-_ if your controller call start() func to init: get navigationController on start() func
-_ if your controller don't need init: get navigationController in your controller
+2) About problem navigationController: <br>
+when you want open new controller, you must use navigationController in Coordinator class <br>
+_ if your controller call start() func to init: get navigationController on start() func <br>
+_ if your controller don't need init: get navigationController in your controller <br>
