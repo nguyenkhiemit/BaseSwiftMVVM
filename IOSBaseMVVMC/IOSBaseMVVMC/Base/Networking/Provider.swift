@@ -14,7 +14,7 @@ import RxCocoa
 
 class Provider {
     
-    fileprivate let networkTimeout: TimeInterval = 15.0
+    fileprivate let networkTimeout: TimeInterval = 30.0
     
     fileprivate let backgroundScheduler = ConcurrentDispatchQueueScheduler(qos: .background)
     
