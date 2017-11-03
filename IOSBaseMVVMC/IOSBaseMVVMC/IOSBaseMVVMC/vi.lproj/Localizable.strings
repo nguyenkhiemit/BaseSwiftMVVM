@@ -22,6 +22,8 @@
 
 "TabLayout" = "TabLayout";
 
+"ContainerView" = "Container";
+
 "Warning pass empty" = "Mật khẩu không được để trống";
 
 "Warning pass format" = "Mật khẩu phải chứa từ 8 kỳ tự trở lên";

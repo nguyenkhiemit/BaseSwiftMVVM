@@ -31,6 +31,7 @@ extension MenuViewModel {
         menus.value.append(Menu(index: MenuIndex.POS_LANGUAGE, text: "Language".localized(), type: MenuType.MENU))
         menus.value.append(Menu(index: MenuIndex.POS_ABOUT_TITLE, text: "Title TabLayout".localized(), type: MenuType.TITLE))
         menus.value.append(Menu(index: MenuIndex.POS_TAB_LAYOUT, text: "About TabLayout".localized(), type: MenuType.MENU))
+        menus.value.append(Menu(index: MenuIndex.POS_CONTAINER, text: "Container".localized(), type: MenuType.MENU))
         return menus
     }
 

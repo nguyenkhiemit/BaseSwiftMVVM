@@ -86,6 +86,18 @@
 		18BE96F51FA6CD2700DEC8BF /* UIEmptyText.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18BE96F41FA6CD2700DEC8BF /* UIEmptyText.swift */; };
 		18EB5C4D1F8CDE13001FB712 /* DesignableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18EB5C4C1F8CDE13001FB712 /* DesignableView.swift */; };
 		18EB5C4F1F8CDFF0001FB712 /* DesignableButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18EB5C4E1F8CDFF0001FB712 /* DesignableButton.swift */; };
+		18ED8A771FAB5ACA004A5577 /* ContainerViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18ED8A761FAB5ACA004A5577 /* ContainerViewModel.swift */; };
+		18ED8A791FAB621D004A5577 /* PinkViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18ED8A781FAB621D004A5577 /* PinkViewController.swift */; };
+		18ED8A7D1FAB691B004A5577 /* BlueViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18ED8A7C1FAB691B004A5577 /* BlueViewModel.swift */; };
+		18ED8A7F1FAB6977004A5577 /* BlueCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18ED8A7E1FAB6977004A5577 /* BlueCoordinator.swift */; };
+		18ED8A811FAB7095004A5577 /* PinkViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18ED8A801FAB7095004A5577 /* PinkViewModel.swift */; };
+		18ED8A831FAB70D9004A5577 /* PinkCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18ED8A821FAB70D9004A5577 /* PinkCoordinator.swift */; };
+		18EF57A41FAB2BC600B73251 /* Container.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 18EF57A31FAB2BC600B73251 /* Container.storyboard */; };
+		18EF57A61FAB2D2C00B73251 /* ContainerCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18EF57A51FAB2D2C00B73251 /* ContainerCoordinator.swift */; };
+		18EF57AA1FAB2D7D00B73251 /* ContainerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18EF57A91FAB2D7D00B73251 /* ContainerViewController.swift */; };
+		18EF57AC1FAB315B00B73251 /* BlueViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18EF57AB1FAB315B00B73251 /* BlueViewController.swift */; };
+		18EF57AE1FAB316800B73251 /* OrangeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18EF57AD1FAB316800B73251 /* OrangeViewController.swift */; };
+		18EF57B01FAB317300B73251 /* GreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18EF57AF1FAB317300B73251 /* GreenViewController.swift */; };
 		4084251B5739CCF2206A4972 /* Pods_IOSBaseMVVMC.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1088978D200D9D871D5A3D29 /* Pods_IOSBaseMVVMC.framework */; };
 		9ED90984C305A9E323A46FD2 /* Pods_IOSBaseMVVMCTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DCEFA01BDD823A237EEC737A /* Pods_IOSBaseMVVMCTests.framework */; };
 		D24EDB901F83E8A30065FFF0 /* UserDefaultsUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = D24EDB8F1F83E8A30065FFF0 /* UserDefaultsUtils.swift */; };
@@ -201,6 +213,18 @@
 		18BE96F41FA6CD2700DEC8BF /* UIEmptyText.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIEmptyText.swift; sourceTree = "<group>"; };
 		18EB5C4C1F8CDE13001FB712 /* DesignableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DesignableView.swift; sourceTree = "<group>"; };
 		18EB5C4E1F8CDFF0001FB712 /* DesignableButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DesignableButton.swift; sourceTree = "<group>"; };
+		18ED8A761FAB5ACA004A5577 /* ContainerViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContainerViewModel.swift; sourceTree = "<group>"; };
+		18ED8A781FAB621D004A5577 /* PinkViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PinkViewController.swift; sourceTree = "<group>"; };
+		18ED8A7C1FAB691B004A5577 /* BlueViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlueViewModel.swift; sourceTree = "<group>"; };
+		18ED8A7E1FAB6977004A5577 /* BlueCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlueCoordinator.swift; sourceTree = "<group>"; };
+		18ED8A801FAB7095004A5577 /* PinkViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PinkViewModel.swift; sourceTree = "<group>"; };
+		18ED8A821FAB70D9004A5577 /* PinkCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PinkCoordinator.swift; sourceTree = "<group>"; };
+		18EF57A31FAB2BC600B73251 /* Container.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Container.storyboard; sourceTree = "<group>"; };
+		18EF57A51FAB2D2C00B73251 /* ContainerCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContainerCoordinator.swift; sourceTree = "<group>"; };
+		18EF57A91FAB2D7D00B73251 /* ContainerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContainerViewController.swift; sourceTree = "<group>"; };
+		18EF57AB1FAB315B00B73251 /* BlueViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlueViewController.swift; sourceTree = "<group>"; };
+		18EF57AD1FAB316800B73251 /* OrangeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrangeViewController.swift; sourceTree = "<group>"; };
+		18EF57AF1FAB317300B73251 /* GreenViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GreenViewController.swift; sourceTree = "<group>"; };
 		1BAF6B3576D8223EE8824646 /* Pods-IOSBaseMVVMCTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-IOSBaseMVVMCTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-IOSBaseMVVMCTests/Pods-IOSBaseMVVMCTests.release.xcconfig"; sourceTree = "<group>"; };
 		4093C415BF8373EE99E44E9F /* Pods-IOSBaseMVVMC.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-IOSBaseMVVMC.release.xcconfig"; path = "Pods/Target Support Files/Pods-IOSBaseMVVMC/Pods-IOSBaseMVVMC.release.xcconfig"; sourceTree = "<group>"; };
 		47597B425742D960DB386E10 /* Pods-IOSBaseMVVMCUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-IOSBaseMVVMCUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-IOSBaseMVVMCUITests/Pods-IOSBaseMVVMCUITests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -375,6 +399,7 @@
 		1812DEA91F7E3F93004F9286 /* IOSBaseMVVMC */ = {
 			isa = PBXGroup;
 			children = (
+				18EF579D1FAB2ADC00B73251 /* ContainerView */,
 				1808AB2E1FA96C9B004ABE13 /* TabLayout */,
 				1883C6381F7F36520015367F /* Menu */,
 				1883C62E1F7F36480015367F /* Home */,
@@ -647,6 +672,65 @@
 			path = CustomView;
 			sourceTree = "<group>";
 		};
+		18EF579D1FAB2ADC00B73251 /* ContainerView */ = {
+			isa = PBXGroup;
+			children = (
+				18EF57A21FAB2B3900B73251 /* ViewModel */,
+				18EF57A11FAB2B2E00B73251 /* Storyboard */,
+				18EF57A01FAB2B2800B73251 /* View */,
+				18EF579F1FAB2B2100B73251 /* Model */,
+				18EF579E1FAB2B1500B73251 /* Coordinator */,
+			);
+			path = ContainerView;
+			sourceTree = "<group>";
+		};
+		18EF579E1FAB2B1500B73251 /* Coordinator */ = {
+			isa = PBXGroup;
+			children = (
+				18EF57A51FAB2D2C00B73251 /* ContainerCoordinator.swift */,
+				18ED8A7E1FAB6977004A5577 /* BlueCoordinator.swift */,
+				18ED8A821FAB70D9004A5577 /* PinkCoordinator.swift */,
+			);
+			path = Coordinator;
+			sourceTree = "<group>";
+		};
+		18EF579F1FAB2B2100B73251 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		18EF57A01FAB2B2800B73251 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				18EF57A91FAB2D7D00B73251 /* ContainerViewController.swift */,
+				18EF57AB1FAB315B00B73251 /* BlueViewController.swift */,
+				18EF57AD1FAB316800B73251 /* OrangeViewController.swift */,
+				18EF57AF1FAB317300B73251 /* GreenViewController.swift */,
+				18ED8A781FAB621D004A5577 /* PinkViewController.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		18EF57A11FAB2B2E00B73251 /* Storyboard */ = {
+			isa = PBXGroup;
+			children = (
+				18EF57A31FAB2BC600B73251 /* Container.storyboard */,
+			);
+			path = Storyboard;
+			sourceTree = "<group>";
+		};
+		18EF57A21FAB2B3900B73251 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				18ED8A761FAB5ACA004A5577 /* ContainerViewModel.swift */,
+				18ED8A7C1FAB691B004A5577 /* BlueViewModel.swift */,
+				18ED8A801FAB7095004A5577 /* PinkViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
 		5A1CFE1F542A92F147D4DE21 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -807,6 +891,7 @@
 				184B153C1F90532F00EBF75C /* UIChangeLanguageView.xib in Resources */,
 				1899F08D1F8928BD00B0D8F6 /* HomeTableViewCell.xib in Resources */,
 				1803EB211F7E932A00A99D8B /* .gitignore in Resources */,
+				18EF57A41FAB2BC600B73251 /* Container.storyboard in Resources */,
 				D2F299541F8E68B00010C1F5 /* UILoading.xib in Resources */,
 				1812DEB51F7E3F93004F9286 /* LaunchScreen.storyboard in Resources */,
 				180BC04B1F7FC813008E4A62 /* Menu.storyboard in Resources */,
@@ -980,6 +1065,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				18EF57A61FAB2D2C00B73251 /* ContainerCoordinator.swift in Sources */,
 				180BC0631F8094D8008E4A62 /* LoginViewController.swift in Sources */,
 				1899F08B1F891CF300B0D8F6 /* CommonError.swift in Sources */,
 				184040A21F8389B2008D3227 /* LoginRequest.swift in Sources */,
@@ -989,10 +1075,12 @@
 				180BC06B1F809582008E4A62 /* LoginCoordinator.swift in Sources */,
 				180BC0651F8094E4008E4A62 /* RegisterViewController.swift in Sources */,
 				1808AB751FA9732E004ABE13 /* TabLayoutViewModel.swift in Sources */,
+				18ED8A811FAB7095004A5577 /* PinkViewModel.swift in Sources */,
 				1808ABC91FA9BCF8004ABE13 /* SummerViewModel.swift in Sources */,
 				1808ABB91FA9BA0B004ABE13 /* SummerViewController.swift in Sources */,
 				18470E221F84C1D3006AD3AA /* Account.swift in Sources */,
 				1899F07E1F890C5500B0D8F6 /* BookingResponse.swift in Sources */,
+				18ED8A831FAB70D9004A5577 /* PinkCoordinator.swift in Sources */,
 				18EB5C4F1F8CDFF0001FB712 /* DesignableButton.swift in Sources */,
 				1883C65B1F7F4F710015367F /* MenuViewModel.swift in Sources */,
 				184317B31F8E2A46009307EC /* UILoading.swift in Sources */,
@@ -1005,6 +1093,7 @@
 				1808ABBD1FA9BB0B004ABE13 /* SpringCoordinator.swift in Sources */,
 				1808AB711FA9724E004ABE13 /* TabLayoutViewController.swift in Sources */,
 				180BC0671F809550008E4A62 /* LoginViewModel.swift in Sources */,
+				18ED8A7D1FAB691B004A5577 /* BlueViewModel.swift in Sources */,
 				1812DEEC1F7E4FDC004F9286 /* BaseCoordinator.swift in Sources */,
 				1883C6441F7F36520015367F /* Menu.swift in Sources */,
 				18470E201F84C1C6006AD3AA /* AccountResponse.swift in Sources */,
@@ -1015,7 +1104,9 @@
 				18BE96F31FA6CC6400DEC8BF /* EmptyTextUtils.swift in Sources */,
 				1899F0871F8912FB00B0D8F6 /* TargetType.swift in Sources */,
 				1883C6461F7F36520015367F /* MenuViewController.swift in Sources */,
+				18EF57B01FAB317300B73251 /* GreenViewController.swift in Sources */,
 				1812DEF71F7E591A004F9286 /* Utils.swift in Sources */,
+				18EF57AA1FAB2D7D00B73251 /* ContainerViewController.swift in Sources */,
 				1883C6431F7F36520015367F /* MenuCoordinator.swift in Sources */,
 				1808ABC11FA9BB2D004ABE13 /* SummerCoordinator.swift in Sources */,
 				184B153A1F90532600EBF75C /* UIChangeLanguageView.swift in Sources */,
@@ -1026,12 +1117,16 @@
 				185F9ED11F88598E007D0E57 /* AuthentValidateUtils.swift in Sources */,
 				1899F08F1F89290800B0D8F6 /* HomeTableViewCell.swift in Sources */,
 				1899F0861F8912FB00B0D8F6 /* ClientApi.swift in Sources */,
+				18EF57AC1FAB315B00B73251 /* BlueViewController.swift in Sources */,
 				180BC0691F80955C008E4A62 /* RegisterViewModel.swift in Sources */,
 				184B153E1F90AD6300EBF75C /* ChangeLanguageUtils.swift in Sources */,
 				180BC06D1F80958E008E4A62 /* RegisterCoordinator.swift in Sources */,
 				1808AB731FA97288004ABE13 /* TabLayoutCoordinator.swift in Sources */,
+				18ED8A791FAB621D004A5577 /* PinkViewController.swift in Sources */,
 				D27A94141F85A8070036E7E1 /* BaseResponse.swift in Sources */,
+				18ED8A771FAB5ACA004A5577 /* ContainerViewModel.swift in Sources */,
 				181E27B41F87267F00682404 /* AuthenticationRequestManager.swift in Sources */,
+				18ED8A7F1FAB6977004A5577 /* BlueCoordinator.swift in Sources */,
 				180BC06F1F809642008E4A62 /* HomeViewModel.swift in Sources */,
 				1808ABB31FA9B9BC004ABE13 /* WinterViewController.swift in Sources */,
 				1899F07C1F890C4500B0D8F6 /* BookingRequest.swift in Sources */,
@@ -1043,6 +1138,7 @@
 				1883C65E1F7F5B4D0015367F /* BaseViewController.swift in Sources */,
 				1808ABBF1FA9BB1A004ABE13 /* AutumnCoordinator.swift in Sources */,
 				D258842D1F8D8835000B2051 /* DesignableTextField.swift in Sources */,
+				18EF57AE1FAB316800B73251 /* OrangeViewController.swift in Sources */,
 				1883C6491F7F37030015367F /* LanguageUtils.swift in Sources */,
 				1899F0891F89156E00B0D8F6 /* HomeRequestManager.swift in Sources */,
 				18470E1C1F84C191006AD3AA /* RegisterResponse.swift in Sources */,

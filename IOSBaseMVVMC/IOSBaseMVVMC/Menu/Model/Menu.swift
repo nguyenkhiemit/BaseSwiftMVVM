@@ -20,6 +20,7 @@ enum MenuIndex {
     case POS_ABOUT_TITLE
     case POS_LANGUAGE
     case POS_TAB_LAYOUT
+    case POS_CONTAINER
 }
 
 struct Menu {

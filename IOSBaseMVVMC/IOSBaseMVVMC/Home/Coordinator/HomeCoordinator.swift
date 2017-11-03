@@ -33,6 +33,9 @@ extension HomeCoordinator: HomeCoordinatorDelegate {
         } else if MenuIndex.POS_TAB_LAYOUT == index {
             let tabLayoutCoordinator = TabLayoutCoordinator(navigationController: navigationController)
             tabLayoutCoordinator.start()
+        } else if MenuIndex.POS_CONTAINER == index {
+            let containerCoordinator = ContainerCoordinator(navigationController: navigationController)
+            containerCoordinator.start()
         }
     }
 }

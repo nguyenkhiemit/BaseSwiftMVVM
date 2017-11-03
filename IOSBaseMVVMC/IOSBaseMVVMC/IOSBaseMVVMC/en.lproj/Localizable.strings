@@ -22,6 +22,8 @@
 
 "TabLayout" = "TabLayout";
 
+"ContainerView" = "Container";
+
 "Warning pass empty" = "Password can't empty";
 
 "Warning pass format" = "Password must have length more than 8";
